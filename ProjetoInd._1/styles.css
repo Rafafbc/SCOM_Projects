@@ -1,0 +1,58 @@
+head{
+    background-image: url("img/star wars-header_icon.png");
+}
+
+body{
+    margin: 0;
+    background-color: #cccc;
+    background-image: url("img/star wars-icons.png");
+    background-size: 20%;
+}
+
+/* Navigation bar Style */
+div.nav-bar{
+    margin: 0;
+    padding: 0;
+    background-color: yellow;
+    text-align: center;
+    
+    width: 20%;
+    height: 100%; /* Full height */
+    position: fixed; /* Make it stick, even on scroll */
+    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+}
+
+ul.nav-bar{
+    list-style-type: none;
+    margin: 5px;
+    padding: 0;
+    background-color:rgb(184, 184, 184);
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+li a.nav-bar{
+    display: block;
+    border-bottom: 1px solid black;
+}
+
+li a.active-bar{
+    display: block;
+    background-color: rgb(115, 115, 115);
+    color: white;
+    text-align:center;
+    border-bottom: 1px solid black;
+}
+
+li a.nav-bar:hover:not(.active-bar){
+    background-color:rgb(99, 96, 96);
+    color: white
+}
+
+div.page_center-band{
+    background-color: rgb(118, 65, 8);
+    border-radius: 20px;
+    margin: 0% 20% 0% 20%;
+    padding: 10px 8px 10px 8px;
+    height: 100%;
+}

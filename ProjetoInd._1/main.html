@@ -1,0 +1,95 @@
+<!--
+Aplique estilo na página do exercício da Aula 01 utilizando CSS. Faça uma barra de navegação (https://www.w3schools.com/css/css_navbar.asp).
+-->
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="styles.css">
+        <title>Millennium Falcon</title>
+        <link rel="shortcut icon" type="imagex/png" href="img/star-wars-head_icon.ico">
+    </head>
+    <body>
+        <div class="nav-bar">
+            <b>Nav - bar</b>
+            <ul class="nav-bar">
+                <li><a class="active-bar" href="main.html">Home</a></li>
+                <li><a class="nav-bar" href="content.asp">Conteúdo</a></li>
+                <li><a class="nav-bar" href="news.html">Notícias</a></li>
+                <li><a class="nav-bar" href="contact.html">Contato</a></li>
+            </ul>
+        </div>
+        <div class="page_center-band">
+            <div>
+                <iframe width="100%" height="526" src="https://www.youtube.com/embed/sH1iUuETTtM" title="Star Wars Episódio IX: A Ascensão Skywalker - Texto de Abertura" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <hr>
+            <hr>
+            <div>
+                <div>
+                    <h1 id="page-tittle">Millennium Falcon</h1>
+                    <p><i><b>Informações, curiosidades, e tudo que você quiser saber sobre a nave mais famosa da Ficção científica!</b></i></p>
+                    <img src="img\Millennium Falcon.jpeg" alt="Millennium Falcon" width="400" height="250" id="millennium-falcon">
+                    <a href="img\Millennium Falcon.jpeg" download="Nave - Millennium Falcon.jpeg">Clique para baixar aimagem</a>
+                    <blockquote cite="https://starwars.fandom.com/wiki/Millennium_Falcon#cite_note-Episode_IV-22">
+                        "You've never heard of the <a href="#millennium-falcon">Millennium Falcon</a>?"<br>
+                        <span style="color: rgb(43, 0, 255)">"Should I have?"</span><br>
+                        "It's the ship that made the Kessel Run in less than twelve parsecs. I've outrun Imperial starships. Not the local bulk cruisers, mind you, I'm talking about the big Corellian ships now. She's fast enough for you, old man."
+                        <footer><span style="color: rgb(1, 142, 1); font-weight: bold">―Han Solo and Obi-Wan Kenobi</span></footer>
+                    </blockquote>
+                    <iframe width="330" height="480" src="https://www.youtube.com/embed/1j_oqYgIwVo" title="The BEST Star Wars Quotes Fast ship? You&#39;ve never heard of the Millennium Falcon? #Shorts #starwars" frameborder="50" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <!-- Teste da tag Canvas
+                    Exemplo: https://www.w3schools.com/tags/tag_canvas.asp -->
+                    <canvas
+                        id="myCanvas"
+                        width="330"
+                        height="480"
+                        style="border:1px solid #000000;"
+                        >
+                    </canvas>
+                    <p><span style="color:red; font-weight: bold">Colocar video e animação lado a lado🚪🚪</span></p>
+                    <p><span style="color:red; font-weight: bold">Inserir animação da <a href="#millennium-falcon">Millennium Falcon</a> no <i>Canvas</i></span></p>
+                </div>
+                <hr>
+                <div>
+                    <h2 class="page-1st_subtitles">Aparições</h2>
+                    <ol style="font-weight: bold;">
+                        <li><a href="https://starwars.fandom.com/pt/wiki/Star_Wars_Episódio_IV:_Uma_Nova_Esperança"><b>Star Wars Episódio IV:</b> Uma Nova Esperança (1977)</a></li>
+                        <li><a href="https://starwars.fandom.com/pt/wiki/Star_Wars_Episódio_V:_O_Império_Contra-Ataca"><b>Star Wars Episódio V:</b> O Império Contra-Ataca (1980)</a></li>
+                        <li><a href="https://starwars.fandom.com/pt/wiki/Star_Wars_Episódio_IV:_Uma_Nova_Esperança"><b>Star Wars Episódio VI:</b> O Retorno de Jedi (1983)</a></li>
+                        <li><a href="https://starwars.fandom.com/pt/wiki/Star_Wars_Episódio_VII:_O_Despertar_da_Força" target="_blank" style="color: rgb(156, 3, 3)"><b>Star Wars Episódio VII:</b> O Despertar da Força (2015)</a></li>
+                        <li style="color: blue">[...]</li>
+                    </ol>
+                </div>
+                <hr>
+                <div>
+                    <h2 class="page-1st_subtitles" href="https://starwars.fandom.com/pt/wiki/Legends:Millennium_Falcon#Características">Características</h2>
+                    <ul>
+                        <li><strong style="font-weight: bolder;">Armamentos</strong></li>
+                        <ul>
+                            <li><b style="font-weight: bold; color:rgb(68, 68, 71)">Canhão laser</b></li>
+                            <p>O canhão laser duplo era um equipamento de série na <a href="#millennium-falcon">Millennium Falcon</a>. O sistema de mira computadorizado localizava rapidamente os alvos em movimento, e o canhão disparava o laser com grande precisão.
+                            <br>
+                            Embora projetado para destruir obstáculos perigosos, como pequenos asteroides, o canhão também era útil para despistar piratas.</p>
+                            <li><b style="font-weight: bold; color:rgb(68, 68, 71)">Misseis de concussão</b></li>
+                            <p>Os mísseis de concussão antiblindagem viajavam abaixo da velocidade da luz, para lançar ogivas que geravam destruidoras ondas de choque no momento do impacto.</p>
+                        </ul>
+                        <li><strong style="font-weight: bolder;">Propulsão</strong></li>
+                        <p>Conhecido por toda a galáxia por seu sistema de propulsão, o cargueiro YT-1300 construiu seu nome com confiabilidade e rapidez.</p>
+                        <ul>
+                            <li><b style="font-weight: bold; color:rgb(140, 140, 2)">Hiperdrive</b></li>
+                            <p>O gerador Isu-Sim SSPO5 Classe 2.0 do YT-1300 de cromo-titânio, permitia viagens pelo <a href="https://starwars.fandom.com/pt/wiki/Legends:Hiperespaço">hiperespaço</a> a velocidade típicas de naves militares e caças imperiais.</p>
+                            <li><b style="font-weight: bold; color: rgb(140, 140, 2)">Motores Sublght</b></li>
+                            <p>Esses motores de íon, que moviam a nave abaixo da velocidade da luz, eram usados quando o YT-1300 não estava em propulsão Hiperdrive.</p>
+                        </ul>
+                    </ul>
+                </div>
+            <hr>
+            </div>
+            <div>
+                <h1 id="page-minigame">Space Invaders minigame</h1>
+                <iframe src="https://openprocessing.org/sketch/685204/embed/" width="100%" height="600"></iframe>
+            </div>
+        </div>
+    </body>
+</html>
