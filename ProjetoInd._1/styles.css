@@ -1,42 +1,66 @@
-head{
-    background-image: url("img/star wars-header_icon.png");
+/* Normalize.css */
+
+html {
+    font-family: sans-serif;
+    height: 100%;
 }
 
-body{
-    margin: 0;
-    background-color: #cccc;
-    background-image: url("img/star wars-icons.png");
-    background-size: 20%;
+/* head {
+    background-image: url("img/star wars-header_icon.png");
+} */
+
+/* Variavéis de uso constante */
+:root {
+    --primary-color: rgb(52, 225, 141);
+    --secondarr-color: yellow; 
+}
+
+body {
+    display: grid;
+    grid-template-areas:
+        "nav-bar header"
+        "nav-bar page_center-band"
+        "nav-bar footer";
+
+    border: 1px dashed rgb(255, 255, 255);
+    background-image: url("img/teste.jpg");
+    background-size: 50%;
+    background-position: center center;
+    background-repeat: repeat;
+    background-attachment: fixed;
 }
 
 /* Navigation bar Style */
 div.nav-bar{
-    margin: 0;
-    padding: 0;
-    background-color: yellow;
-    text-align: center;
+    /* display: flex;
+    align-content: space-between; 
+    flex-direction: column; */
+    grid-area: nav-bar;
+
+    width: 100%;
     
-    width: 20%;
-    height: 100%; /* Full height */
-    position: fixed; /* Make it stick, even on scroll */
-    overflow: auto; /* Enable scrolling if the sidenav has too much content */
-}
-
-ul.nav-bar{
-    list-style-type: none;
-    margin: 5px;
+    border: 1px dashed rgb(2, 204, 16);
+    background-color: azure;
+    margin: 0% 87% 0% 0%;
     padding: 0;
-    background-color:rgb(184, 184, 184);
-    border: 2px solid black;
-    border-radius: 3px;
+    text-align: center;
 }
 
-li a.nav-bar{
-    display: block;
+div.nav-bar_top{
+    /* align-items: flex-start; */
+}
+
+div.nav-bar_bottom{
+    /* align-items: flex-end; */
+}
+
+
+a.nav-bar_link{
+    display: list-item;
     border-bottom: 1px solid black;
 }
 
-li a.active-bar{
+a.active-nav-bar_link{
     display: block;
     background-color: rgb(115, 115, 115);
     color: white;
@@ -44,15 +68,39 @@ li a.active-bar{
     border-bottom: 1px solid black;
 }
 
-li a.nav-bar:hover:not(.active-bar){
+a.nav-bar_link:hover:not(.active-bar){
     background-color:rgb(99, 96, 96);
     color: white
 }
 
-div.page_center-band{
-    background-color: rgb(118, 65, 8);
-    border-radius: 20px;
-    margin: 0% 20% 0% 20%;
+/* .header, .page_center-band, footer{
+    grid-column: 2/4;
+} */
+
+/* Header Style */
+div.header{
+    margin: 0% 13% 0% 13%;
     padding: 10px 8px 10px 8px;
-    height: 100%;
+    border: 1px solid rgb(208, 255, 0);
+
+    grid-area: header;
+}
+
+/* Page Center-Band Style */
+div.page_center-band{
+    border: 1px solid rgb(255, 0, 0);
+    margin: 0% 13% 0% 13%;
+    padding: 10px 8px 10px 8px;
+    background-color: rgb(118, 65, 8);
+    border-radius: 5px;
+
+    grid-area: page_center-band;
+}
+
+/* Footer Style */
+footer{
+    border: 1px solid rgb(68, 0, 255);
+    height: 30%;
+
+    grid-area: footer;
 }
