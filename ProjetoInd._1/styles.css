@@ -1,81 +1,107 @@
 /* Normalize.css */
 
 html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+
     font-family: sans-serif;
-    height: 100%;
 }
 
-/* head {
+/*
+head {
     background-image: url("img/star wars-header_icon.png");
-} */
+}
+*/
 
 /* Variavéis de uso constante */
 :root {
     --primary-color: rgb(52, 225, 141);
-    --secondarr-color: yellow; 
+    --secondary-color: yellow;
 }
 
 body {
-    display: grid;
-    grid-template-areas:
-        "nav-bar header"
-        "nav-bar page_center-band"
-        "nav-bar footer";
-
     border: 1px dashed rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
+    
     background-image: url("img/teste.jpg");
     background-size: 50%;
     background-position: center center;
     background-repeat: repeat;
     background-attachment: fixed;
+
+    display: grid;
+    grid-template-areas:
+        "nav-bar header"
+        "nav-bar page_center-band"
+        "nav-bar footer";
+}
+
+body background-image {
+    filter: blur(5px);
 }
 
 /* Navigation bar Style */
 div.nav-bar{
-    /* display: flex;
-    align-content: space-between; 
-    flex-direction: column; */
-    grid-area: nav-bar;
-
+    border: 1px dashed rgb(0, 0, 0);
+    background-color: rgb(99, 96, 96);
     width: 100%;
-    
-    border: 1px dashed rgb(2, 204, 16);
-    background-color: azure;
+    /* position: fixed; */
     margin: 0% 87% 0% 0%;
     padding: 0;
+
+    grid-area: nav-bar;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+div.nav-bar span {
+    color: black;
+    font-family: Luminari;
+    font-weight: bold;
+}
+
+a.nav-bar_link {
+    border-bottom: 1px solid black;
+    
     text-align: center;
+    text-decoration: none;
 }
 
-div.nav-bar_top{
-    /* align-items: flex-start; */
+button.nav-bar_button {
+    background-color: transparent;
+    border: 0px;
+    cursor: pointer;
+    width: 55px;
 }
 
-div.nav-bar_bottom{
-    /* align-items: flex-end; */
+img, button {
+    margin-left: auto;
+    margin-right: auto;
 }
 
-
-a.nav-bar_link{
-    display: list-item;
-    border-bottom: 1px solid black;
-}
-
-a.active-nav-bar_link{
-    display: block;
-    background-color: rgb(115, 115, 115);
-    color: white;
-    text-align:center;
-    border-bottom: 1px solid black;
-}
-
-a.nav-bar_link:hover:not(.active-bar){
+a.nav-bar_link:hover {
     background-color:rgb(99, 96, 96);
     color: white
 }
 
-/* .header, .page_center-band, footer{
-    grid-column: 2/4;
-} */
+div.nav-bar_top{
+    border: 1px dashed var(--primary-color);
+
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+div.nav-bar_bottom{
+    border: 1px dashed var(--primary-color);
+
+    display: flex;
+    flex-direction: column;
+}
 
 /* Header Style */
 div.header{

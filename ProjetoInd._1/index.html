@@ -7,12 +7,24 @@ Aplique estilo na página do exercício da Aula 01 utilizando CSS. Faça uma bar
         <meta charset="utf-8">
         <link rel="stylesheet" href="styles.css">
         <title>Millennium Falcon</title>
-        <link rel="shortcut icon" type="imagex/png" href="img/star-wars-head_icon.ico">
+        <link rel="shortcut icon" type="imagex/png" href="img/star wars-head_icon_S-fundo.png">
     </head>
     <body>
         <div class="nav-bar">
             <div class="nav-bar_top">
-                <a class="active-nav-bar_link" href="index.html">Home</a>
+                <a class="nav-bar_link" href="index.html">
+                    <img src="img/star wars-head_icon_S-fundo.png" alt="logo_nav-bar_home-page" width="65px" height="65px" style="display: block;">
+                    <span>Fandom</span>
+                </a>
+                
+                <button class="nav-bar_button" type="button" autofocus>
+                    <img src="img/lupa.png" alt="lupa_nav-bar" width="45px" height="45px" style="display: block;">
+                </button>
+                <!-- <svg viewbox="0 0 200 150">
+                    <circle cx="80" cy="60" r="40" stroke="black" stroke-width="4" fill="none"/>
+                    <rect x="80" y="60" width="80" height="5" rx="2.5" ry="2.5" fill="black" transform="rotate(60, 60, 60)"/>
+                </svg> -->
+
                 <a class="nav-bar_link" href="content.html">Conteúdo</a>
                 <a class="nav-bar_link" href="news.html">Notícias</a>
                 <a class="nav-bar_link" href="contact.html">Contato</a>
@@ -38,7 +50,7 @@ Aplique estilo na página do exercício da Aula 01 utilizando CSS. Faça uma bar
                     <h1 id="page-tittle">Millennium Falcon</h1>
                     <p><i><b>Informações, curiosidades, e tudo que você quiser saber sobre a nave mais famosa da Ficção científica!</b></i></p>
                     <img src="img\Millennium Falcon.jpeg" alt="Millennium Falcon" width="400" height="250" id="millennium-falcon">
-                    <a href="img\Millennium Falcon.jpeg" download="Nave - Millennium Falcon.jpeg">Clique para baixar aimagem</a>
+                    <a href="img\Millennium Falcon.jpeg" download="Nave - Millennium Falcon.jpeg">Clique para baixar a imagem</a>
                     <blockquote cite="https://starwars.fandom.com/wiki/Millennium_Falcon#cite_note-Episode_IV-22">
                         "You've never heard of the <a href="#millennium-falcon">Millennium Falcon</a>?"<br>
                         <span style="color: rgb(43, 0, 255)">"Should I have?"</span><br>
