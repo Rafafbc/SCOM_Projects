@@ -5,3 +5,7 @@
 ## Pixel Art
 - **INSANELY Smooth pixel ATTACK Animation Tutorial:** <https://www.youtube.com/watch?v=KS837a-TFRc>
 - **Pixel Art Class - Art Styles for Indie Games:** <https://www.youtube.com/watch?v=LfTiws-0Vss>
+
+
+
+alguma coisa aleatoria ai
