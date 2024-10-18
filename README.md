@@ -1,11 +1,9 @@
 # SCOM_Projects
 
-## Sites dos Projetos da matéria de SCOM
+> Site do Projeto: <https://rafafbc.github.io/SCOM_Projects/Projeto_em_Grupo_>
 
-Projeto Individual 1: <https://rafafbc.github.io/SCOM_Projects/ProjetoInd._1/>
-<html>
-  <!--
-  Projeto Individual 2: <>
-  Projeto Individual 3: <>
-  -->
-</html>
+## Informações sobre o Jogo
+### Mapa
+![image](https://github.com/user-attachments/assets/a10dd352-335c-42d0-ba92-d4a577f6413a)
+
+### Requisitos do trabalho
