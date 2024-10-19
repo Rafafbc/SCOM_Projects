@@ -11,7 +11,7 @@
     /* Variáveis para o Tema Claro */
     --color-lightSide-text: rgb(0, 0, 0);
     --color-lightSide-background: rgb(221, 217, 217); 
-    --color-lightSide-info: rgb(184, 0, 0);
+    --color-lightSide-info: rgb(88, 88, 88);
     --color-lightSide-highlight: rgba(17, 16, 16, 0.18);
 
     /* Variáveis para o Tema Claro */
@@ -73,12 +73,12 @@ h1 {
 
 h2 {
     font-weight: 600;
-    font-size: 18px;
+    font-size: 22px;
 }
 
 h3 {
     font-weight: 500;
-    font-size: 8px;
+    font-size: 12px;
 }
 
 small {
@@ -97,10 +97,6 @@ p {
 
 .primary {
     color: var(--color-primary);
-}
-
-.danger {
-    color: var(--color-danger);
 }
 
 .success {
@@ -130,17 +126,19 @@ aside .toggle {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 22.4px;
+    margin-top: 10px;
 }
 
 aside .toggle .logo {
+    display: flex;
+    align-items: center;
     display: flex;
     gap: 8px;
 }
 
 aside .toggle .logo img {
-    width: 32px;
-    height: 32px;
+    width: 54px;
+    height: 64px;
 }
 
 aside .toggle .close {
@@ -156,21 +154,22 @@ aside .sidebar {
     border-radius: 13px;
     height: 88vh;
     position: relative;
-    top: 24px;
+    top: 10px;
     transition: all 0.3s ease;
 }
 aside .sidebar:hover {
     box-shadow: none;
 }
 
-aside .sidebar a:not(:last-child):not(:nth-last-child(2)) {
+aside .sidebar a:not(.active):not(a:hover):not(a:last-child) {
     display: flex;
     align-items: center;
     color: var(--color-lightSide-info);
     height: 59.2px;
     gap: 5px;
     position: relative;
-    margin: 0 8px 0 16px;
+    margin: 0 16px;
+    padding: 0 25px;
     transition: all 0.3s ease;
 }
 
@@ -182,24 +181,74 @@ aside .sidebar a span {
 aside .sidebar a:last-child {
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: center;
     color: var(--color-lightSide-info);
+    height: 53px;
     gap: 5px;
     position: absolute;
-    bottom: 16px;
-    right: 4px;
-    width: 25%;
-}
-aside .sidebar a:nth-last-child(2) {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    color: var(--color-lightSide-info);
-    gap: 5px;
-    position: absolute;
-    bottom: 16px;
-    left: 4px;
-    width: 25%;
+    margin: 0 16px;
+    padding: 0 55px;
+    transition: all 0.5s ease;
+    bottom: 2px;
 }
 
+aside .sidebar a.active{
+    display: flex;
+    align-items: center;
+    height: 59.2px;
+    width: 100%;
+    gap: 5px;
+    position: relative;
+    margin: 0 16px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    color: var(--color-primary);
+    background-color: var(--color-lightSide-background);
+    right: 16px;
+}
+
+aside .sidebar a.active::before{
+    content: '';
+    width: 6px;
+    height: 18px;
+    background-color: var(--color-primary);
+}
+aside .sidebar a.active::after{
+    content: '';
+    width: 6px;
+    height: 18px;
+    background-color: var(--color-primary);
+}
+aside .sidebar a:hover:not(a.active):not(a:last-child) {
+    display: flex;
+    align-items: center;
+    height: 59.2px;
+    width: 90%;
+    gap: 5px;
+    position: relative;
+    padding: 0 25px;
+    transition: all 0.3s ease;
+    color: var(--color-primary);
+    left: 8px;
+}
+aside .sidebar a:last-child:hover {
+    display: flex;
+    align-items: center;
+    height: 59.2px;
+    width: 80%;
+    gap: 5px;
+    position: absolute;
+    padding: 0 25px;
+    transition: all 0.3s ease;
+    color: var(--color-primary);
+    bottom: 5px;
+}
+
+aside .sidebar .tickets-count{
+    background-color: var(--color-danger);
+    padding: 2px 6px;
+    color: white;
+    font-size: 11px;
+    border-radius: var(--border-radius2);
+}
 
