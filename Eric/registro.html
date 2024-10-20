@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <link rel="icon" href="Img/Micro_Receitas_Icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="Styles/style_login.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>u.Receitas - Registro</title>
+</head>
+
+<body>
+    <!--Cabeçalho → Titulo da Pagina-->
+    <header>
+        <h1>Micro.Receitas</h1>
+        <p>O seu banco de projetos microcontrolados ;)</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="principal.html">Home</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Registro</h2>
+        <form action="registro1.php" method="POST">
+
+            <!-- Nome completo -->
+            <label for="nome">Nome Completo:</label><br>
+            <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo"><br><br>
+
+            <!-- Email -->
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required placeholder="Digite seu email"><br><br>
+
+            <!-- Senha -->
+            <label for="senha">Senha:</label><br>
+            <input type="password" id="senha" name="senha" required minlength="6" placeholder="Digite sua senha (mínimo 6 caracteres)"><br><br>
+
+            <!-- Confirmação de senha -->
+            <label for="confirmar_senha">Confirme a Senha:</label><br>
+            <input type="password" id="confirmar_senha" name="confirmar_senha" required placeholder="Repita sua senha"><br><br>
+
+            <!-- Conhecimentos Adicionais -->
+            <h3>Conhecimentos Adicionais</h3>
+            <p>Selecione os conhecimentos que você possui:</p>
+
+            <input type="checkbox" id="programacao" name="conhecimentos[]" value="programacao">
+            <label for="programacao">Componentes</label><br>
+
+            <input type="checkbox" id="iot" name="conhecimentos[]" value="iot">
+            <label for="iot">Noções IoT</label><br>
+
+            <input type="checkbox" id="automacao" name="conhecimentos[]" value="automacao">
+            <label for="automacao">Softwares</label><br>
+
+            <input type="checkbox" id="robotica" name="conhecimentos[]" value="robotica">
+            <label for="robotica">Programação C</label><br>
+
+            <input type="checkbox" id="cloud" name="conhecimentos[]" value="cloud">
+            <label for="cloud">Computação em Nuvem</label><br>
+
+            <input type="checkbox" id="redes" name="conhecimentos[]" value="redes">
+            <label for="redes">Redes</label><br>
+
+            <!-- Sobre você -->
+            <p>
+                <label for="sobre_voce">Fale um pouco sobre você:</label><br>
+                <textarea id="sobre_voce" name="sobre_voce" rows="5" cols="50" placeholder="Compartilhe algo sobre sua experiência, interesses, etc."></textarea><br><br>
+
+            <!-- Aceitar termos -->
+            <input type="checkbox" id="termos" name="termos" required>
+            <label for="termos">Aceito os <a href="#" style="color: blue">termos e condições</a></label><br><br>
+
+            <input type="submit" value="Registrar">
+        </form>
+    </div>
+
+    <footer style="margin-top: 10%;">
+        <p style="text-align: center;">&copy; 2024 Eriquinho Enterprises. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Adicione o JavaScript aqui -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var form = document.querySelector("form");
+            form.addEventListener("submit", function(event) {
+                var senha = document.getElementById("senha").value;
+                var confirmarSenha = document.getElementById("confirmar_senha").value;
+                if (senha !== confirmarSenha) {
+                    event.preventDefault(); // Impede o envio do formulário
+                    alert("As senhas não coincidem. Por favor, tente novamente.");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
