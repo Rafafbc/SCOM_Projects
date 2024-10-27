@@ -1,0 +1,127 @@
+/* Estilo Base do Site */
+/*Geral*/
+@font-face {
+    font-family: '8bit'; /* Escolha um nome para a fonte */
+    src: url('8bit.ttf') format('truetype'); /* Caminho do arquivo .ttf */
+    font-weight: normal;
+    font-style: normal;
+}
+    /* Adiciona a rolagem suave para a página */
+    html{
+        scroll-behavior: smooth; /* Adiciona a rolagem suave para a página */
+}
+
+    body {
+        font-family: '8bit';
+        font-size: 15px;
+        margin: 0;
+        padding: 0;
+        color: rgb(0, 0, 0);
+        background-image: url('fundo2.png');
+        background-size: cover;
+    }
+    header, nav, section, article, aside, footer {
+        padding: 5px;
+    }
+    header {
+        background-color: #53280a;
+        color: white;
+    }
+    header h1, header p {
+        text-shadow: 2px 2px 5px rgb(0, 0, 0)
+    }
+    nav {
+        background-color: #a36538;
+
+    }
+    nav ul {
+        list-style: none;
+        padding: 5px;
+    }
+    nav ul li {
+        display: inline;
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+    nav ul li a {
+        color: rgb(254, 255, 254);
+        text-decoration: none;
+        padding: 14px;
+        background-color: rgb(112, 69, 24);
+        border-radius: 10px;
+        transition: 0.3s;
+
+    }
+    nav ul li a:hover {
+      background-color: rgb(96, 95, 99);
+      color: white;
+      border-radius: 10px;
+    }
+
+    .container{
+        border: 12px solid rgb(69, 65, 21);
+        background-image: url('fundo_form.png');
+        background-position: center; /* Centraliza a imagem no fundo */
+        background-size: cover;
+        
+        width: 45%;
+        height: auto;
+        margin-top: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 12px;
+        border-radius: 5px;
+        color: rgb(44, 23, 7);
+        border-radius: 25px;
+        position: center;
+    }
+
+    .container a{
+        text-decoration: none;
+        color: white;
+    }
+
+    form {
+        margin: 20px 0;
+        color: rgb(56, 36, 10);
+    }
+    
+    form input[type="text"], form input[type="email"], form input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+    }
+    
+    form input[type="submit"] {
+        width: 100%;
+        background-color: rgb(54, 66, 64);
+        color: white;
+        padding: 14px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: large;
+        transition: 0.5s;
+        }
+    
+    form input[type="submit"]:hover {
+        background-color: rgb(102, 119, 120);
+    }
+    
+    @media screen and(max-height: 450px){
+        .container{padding-top: 15px;}
+        .container a{font-size: 18px;}
+    }
+
+    footer {
+        color: rgb(19, 14, 14);
+        text-align: justify;
+        padding: 30px 0;
+        position: flex;
+        bottom: 0;
+        width: 100%;
+    }

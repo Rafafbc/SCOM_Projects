@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="style/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3Islands</title>
+</head>
+<body>
+    <header>
+        <img src="style/3Islands.png" width="auto" height="100px">
+    </header>
+
+    <nav>
+        <ul>
+            <li style="text-align: center; margin-left: 5px;"><a href="#Atts">New Patch! v1.0</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Registro</h2>
+        <form id="register-form">
+            <label for="nome">Nome Completo:</label><br>
+            <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo"><br><br>
+
+            <label for="nick">Nickname:</label><br>
+            <input type="text" id="nick" name="nick" required placeholder="Digite seu nome no jogo"><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required placeholder="Digite seu email"><br><br>
+
+            <label for="senha">Senha:</label><br>
+            <input type="password" id="senha" name="senha" required minlength="6" placeholder="Digite sua senha (mínimo 6 caracteres)"><br><br>
+
+            <label for="confirmar_senha">Confirme a Senha:</label><br>
+            <input type="password" id="confirmar_senha" name="confirmar_senha" required placeholder="Repita sua senha"><br><br>
+
+            <input type="checkbox" id="termos" name="termos" required>
+            <label for="termos">Aceito os <a href="#" style="color: blue">termos e condições</a></label><br><br>
+
+            <span id="register-error-message" style="color:red; display:none;"></span><br>
+            <input type="submit" value="Registrar">
+        </form>
+    </div>
+
+    <footer>
+        <p style="text-align: center;">&copy; SCOMB LTDA. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Referência para o arquivo JavaScript separado -->
+    <script>
+    document.getElementById('register-form').addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    const Nome = document.getElementById('nome').value;
+    const Nickname = document.getElementById('nick').value;
+    const Email = document.getElementById('email').value;
+    const Senha = document.getElementById('senha').value;
+    const confirmarSenha = document.getElementById('confirmar_senha').value;
+
+    if (Senha !== confirmarSenha) {
+        alert("As senhas não coincidem. Por favor, tente novamente.");
+        return;
+    }
+
+    const data = { Nome, nickname: Nickname, Email, Senha };
+
+    try {
+        console.log("Enviando dados para o servidor:", data);
+
+        const response = await fetch('http://localhost:5000/cadastro', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+        });
+
+        const contentType = response.headers.get('content-type');
+        console.log("Content-Type da resposta:", contentType);
+
+        if (contentType && contentType.includes('application/json')) {
+            const result = await response.json();
+            console.log("Resposta do servidor:", result);
+
+            if (response.ok) {
+                alert('Conta criada com sucesso!');
+                window.location.href = "teste_login.html"; // Redireciona para a página
+            } else {
+                document.getElementById('register-error-message').textContent = result.erro;
+                document.getElementById('register-error-message').style.display = 'block';
+            }
+        } else {
+            console.error('Erro: A resposta não está no formato JSON');
+            document.getElementById('register-error-message').textContent = 'Erro ao conectar com o servidor.';
+            document.getElementById('register-error-message').style.display = 'block';
+        }
+    } catch (err) {
+        console.error('Erro ao tentar conectar ao servidor:', err);
+        document.getElementById('register-error-message').textContent = 'Erro ao conectar com o servidor.';
+        document.getElementById('register-error-message').style.display = 'block';
+    }
+});
+
+
+    </script>
+</body>
+</html>
