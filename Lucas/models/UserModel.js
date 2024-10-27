@@ -12,6 +12,10 @@ const User = db.sequelize.define('user', {
     type: db.Sequelize.STRING,
     allowNull: false,
   },
+  nickname: {
+    type: db.Sequelize.STRING,
+    allowNull: false, // Pode ser alterado conforme a necessidade
+  },
   Email: {
     type: db.Sequelize.STRING,
     allowNull: false,
@@ -21,12 +25,10 @@ const User = db.sequelize.define('user', {
     type: db.Sequelize.STRING,
     allowNull: false,
   },
-  Cargo: {
-    type: db.Sequelize.STRING,
-    allowNull: false,
-  },
-},
-  { timestamps: false, freezeTableName: true });
+}, {
+  timestamps: false,
+  freezeTableName: true
+});
 
 // Hash da senha antes de criar o usuário
 User.beforeCreate(async (user, options) => {
@@ -42,15 +44,15 @@ User.getAllUsers = (callback) => {
 };
 
 // Função para criar usuário
-User.createUser = (Nome, Email, Senha, Cargo, callback) => {
-  User.create({ Nome, Email, Senha, Cargo })
+User.createUser = (Nome, nickname, Email, Senha, callback) => {
+  User.create({ Nome, nickname, Email, Senha })
     .then(() => callback(null))
     .catch(err => callback(err));
 };
 
 // Função para atualizar usuário
-User.updateUser = (id, Nome, Email, Cargo, callback) => {
-  User.update({ Nome, Email, Cargo }, { where: { id } })
+User.updateUser = (id, Nome, nickname, Email, callback) => {
+  User.update({ Nome, nickname, Email }, { where: { id } })
     .then(() => callback(null))
     .catch(err => callback(err));
 };
@@ -62,5 +64,5 @@ User.deleteUser = (id, callback) => {
     .catch(err => callback(err));
 };
 
-//User.sync({force: true})
+//User.sync({force: true}) // Descomente esta linha se precisar criar a tabela, execute e depois comente de novo
 module.exports = User;

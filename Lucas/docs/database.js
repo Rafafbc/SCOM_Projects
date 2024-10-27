@@ -1,9 +1,9 @@
 const database = {
-    name: "bodtwhnpvbint7c4vmua",
-    user: "uesa4sugvhpaafee",
-    password: "VkqjXxG2eTu8qYZL3g9m",
+    name: "bmqehxprdvu03wxqkzj7",
+    user: "uicd6z3jgqi2xgoi",
+    password: "ljVCMDxKzooURB9fJChL",
     port: "3306",
-    host: "bodtwhnpvbint7c4vmua-mysql.services.clever-cloud.com",
+    host: "bmqehxprdvu03wxqkzj7-mysql.services.clever-cloud.com",
     dialect:"mysql"
 }
 
