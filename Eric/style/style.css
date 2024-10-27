@@ -9,7 +9,7 @@
     /* Adiciona a rolagem suave para a página */
     html{
         scroll-behavior: smooth; /* Adiciona a rolagem suave para a página */
-    }
+}
 
     body {
         font-family: '8bit';
@@ -53,7 +53,7 @@
 
     }
     nav ul li a:hover {
-      background-color: rgb(56, 191, 61);
+      background-color: rgb(96, 95, 99);
       color: white;
       border-radius: 10px;
     }
