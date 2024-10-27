@@ -18,7 +18,7 @@
         padding: 0;
         color: rgb(0, 0, 0);
         background-image: url('fundo2.png');
-background-size: cover;
+        background-size: cover;
     }
     header, nav, section, article, aside, footer {
         padding: 5px;
@@ -31,13 +31,12 @@ background-size: cover;
         text-shadow: 2px 2px 5px rgb(0, 0, 0)
     }
     nav {
-        background-color: #53280a;
-        text-align: center;
+        background-color: #a36538;
 
     }
     nav ul {
         list-style: none;
-        padding: 0;
+        padding: 5px;
     }
     nav ul li {
         display: inline;
@@ -50,6 +49,7 @@ background-size: cover;
         padding: 14px;
         background-color: rgb(112, 69, 24);
         border-radius: 10px;
+        transition: 0.3s;
 
     }
     nav ul li a:hover {
@@ -63,10 +63,10 @@ background-size: cover;
         background-image: url('fundo_form.png');
         background-position: center; /* Centraliza a imagem no fundo */
         background-size: cover;
-        background-repeat: no-repeat;
+        
         width: 45%;
         height: auto;
-        margin-top: 10%;
+        margin-top: 5%;
         margin-left: auto;
         margin-right: auto;
         padding: 12px;
@@ -105,6 +105,7 @@ background-size: cover;
         border-radius: 4px;
         cursor: pointer;
         font-size: large;
+        transition: 0.5s;
         }
     
     form input[type="submit"]:hover {
