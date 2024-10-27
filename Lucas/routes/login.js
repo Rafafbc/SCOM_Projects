@@ -18,11 +18,10 @@ router.post('/', (req, res) => {
                     }
                     
                     // Removendo a senha antes de enviar a resposta
-                    user.Senha = undefined; // Corrigido para user.Senha
+                    user.Senha = undefined;
                     if (result) {
-                        // Adicione o cargo à resposta
-                        const { Cargo, ...userData } = user.dataValues; // Supondo que você esteja usando Sequelize
-                        return res.status(200).json({ user: userData, Cargo }); // Usuário autenticado com cargo
+                        const { dataValues: userData } = user;
+                        return res.status(200).json({ user: userData }); // Usuário autenticado
                     } else {
                         return res.status(401).json({ message: 'Credenciais inválidas' }); // Senha incorreta
                     }
