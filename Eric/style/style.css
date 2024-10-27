@@ -1,12 +1,18 @@
 /* Estilo Base do Site */
 /*Geral*/
+@font-face {
+    font-family: '8bit'; /* Escolha um nome para a fonte */
+    src: url('8bit.ttf') format('truetype'); /* Caminho do arquivo .ttf */
+    font-weight: normal;
+    font-style: normal;
+}
     /* Adiciona a rolagem suave para a página */
     html{
         scroll-behavior: smooth; /* Adiciona a rolagem suave para a página */
     }
 
     body {
-        font-family: Verdana;
+        font-family: '8bit';
         font-size: 15px;
         margin: 0;
         padding: 0;
