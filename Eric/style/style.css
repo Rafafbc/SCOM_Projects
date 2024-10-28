@@ -6,6 +6,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
     /* Adiciona a rolagem suave para a página */
     html{
         scroll-behavior: smooth; /* Adiciona a rolagem suave para a página */
