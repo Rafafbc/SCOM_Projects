@@ -13,6 +13,23 @@
 ---
 # Arquitetura MVC
 - **OiArquitetura MVC e princípios de projeto:** <https://medium.com/@celionormando/arquitetura-mvc-e-princípios-de-projeto-3d0b278ef910>
+- **Como implementar?**
+    >  Segundo o ChatGPT, ao responder a seguinte pergunta:
+    > "e como eu implemento essa arquitetura MVC na minha aplicação web que usa: HTML, CSS, JavaScript, MySQL e PHP?"
+
+    **Estrutura sugerida:** <br> 
+    /meu-projeto <br> 
+    ├── index.php             // Arquivo principal, ponto de entrada da aplicação. <br> 
+    ├── /app <br>
+    │   ├── /controllers      // Controladores que manipulam as requisições. <br>
+    │   ├── /models           // Modelos que representam os dados e interagem com o banco de dados. <br>
+    │   └── /views            // Arquivos HTML e templates que formam a interface do usuário. <br>
+    ├── /public <br>
+    │   ├── /css              // Arquivos CSS. <br>
+    │   ├── /js               // Arquivos JavaScript. <br>
+    │   └── /images           // Imagens e assets. <br>
+    ├── /config               // Configurações do banco de dados. <br>
+    └── /core                 // Classes utilitárias, helpers e autoloaders. <br>
 
 # View
 - **Responsive Admin Dashboard:** <https://www.youtube.com/watch?v=YJTKlAvbDo4>
