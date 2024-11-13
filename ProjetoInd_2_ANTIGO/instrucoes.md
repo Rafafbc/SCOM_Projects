@@ -1,4 +1,4 @@
-# Instruções Trabalho Individual 2
+# Instruções Trabalho Individual 1
 > Neste projeto, vocês irão desenvolver um site que inclui funcionalidades de login e autenticação, permitindo a criação, exclusão e alteração de perfis de usuários por administradores. Este trabalho vai desafiar vocês a implementar medidas de segurança robustas e a utilizar tecnologias modernas para desenvolver uma aplicação web segura, eficiente e com uma interface amigável.  
 Todo trabalho deve acompanhar um vídeo de 5 min apresentando o sistema desenvolvido e um relatório de 7 páginas (sem contar referências), descrevendo seu processo de desenvolvimento, tecnologias utilizadas e dificuldades encontradas. Caso alguma parte do código tenha sido desenvolvida com IA generativa ou obtido de alguma fonte de terceiros, isso deve estar descrito no relatório, com descrição de como o código foi contextualizado dentro do escopo do trabalho.
 

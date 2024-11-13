@@ -1,0 +1,271 @@
+/* Import da fonte Poppins da API do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Variáveis de estilo associados ao elemento raiz do documento, no caso o <html>, mas com relevância de declaração maior. */
+:root {
+    --color-primary: blue;
+    --color-danger: red;
+    --color-warning: yellow; 
+    --color-success: green;
+
+    /* Variáveis para o Tema Claro */
+    --color-lightSide-text: rgb(0, 0, 0);
+    --color-lightSide-background: rgb(221, 217, 217); 
+    --color-lightSide-info: rgb(88, 88, 88);
+    --color-lightSide-highlight: rgba(17, 16, 16, 0.18);
+
+    /* Variáveis para o Tema Claro */
+    --color-darkSide-text: rgb(195, 192, 192);
+    --color-darkSide-background: rgb(46, 45, 45); 
+    --color-darkSide-info: rgb(24, 185, 6);
+    --color-darkSide-highlight: #00d3ff;
+
+    --card-border-radius: 36px;
+    --border-radius1: 24px;
+    --border-radius2: 8px;
+
+    --card-padding: 34px;
+    --padding1: 26px;
+
+    --box-shadow: 0px 36px 54px var(--color-lightSide-highlight);
+}
+
+/* --- Estilização de elementos do documento html --- */
+* {     /* Estilização aplicada a todos os elementos do documento de uma vez, usado para remover a estilização padrão do navegador*/
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: 0;
+    border: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
+}
+
+body {
+    width: 100vw;   /* - Mudar o 'vw' para algo melhor! - */
+    height: 100vw;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    user-select: none;
+    overflow-x: hidden;     /* previne o scrolling horizontal, caso o conteúdo transborde horizontalmente */
+    color: var(--color-lightSide-text);
+    background-color: var(--color-lightSide-background);
+}
+
+a {
+    color: black;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 36px;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 22px;
+}
+
+h3 {
+    font-weight: 500;
+    font-size: 12px;
+}
+
+small {
+    font-size: 6px;
+}
+
+p {
+    color: var(--color-lightSide-text);
+}
+
+
+/* --- Estilização de classes --- */
+.text-muted {
+    color: var(--color-darkSide-info);
+}
+
+.primary {
+    color: var(--color-primary);
+}
+
+.success {
+    color: var(--color-success);
+}
+
+.warning {
+    color: var(--color-warning);
+}
+
+.container-1 {
+    display: grid;
+    width: 96%;
+    height: 100%;
+    margin: 0 auto;
+    gap: 31px;
+    grid-template-columns: 192px auto 368px;    /* Define o layout do Grid Container da página, com 3 colunas, sendo que a 2° coluna tem uma largura que se ajusta dinamicamente ao espaço disponível */
+}
+
+
+/* --- Estilização da Sidebar --- */
+aside {
+    height: 100vh;
+}
+
+aside .toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+aside .toggle .logo {
+    display: flex;
+    align-items: center;
+    display: flex;
+    gap: 8px;
+}
+
+aside .toggle .logo img {
+    width: 54px;
+    height: 64px;
+}
+
+aside .toggle .close {
+    padding-right: 12px;
+    display: none;
+}
+
+aside .sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    border-radius: 13px;
+    height: 88vh;
+    position: relative;
+    top: 10px;
+    transition: all 0.3s ease;
+}
+aside .sidebar:hover {
+    box-shadow: none;
+}
+
+aside .sidebar a:not(.active):not(a:hover):not(a:last-child) {
+    display: flex;
+    align-items: center;
+    color: var(--color-lightSide-info);
+    height: 59.2px;
+    gap: 5px;
+    position: relative;
+    margin: 0 16px;
+    padding: 0 25px;
+    transition: all 0.3s ease;
+}
+
+aside .sidebar a span {
+    font-size: 25.6px;
+    transition: all 0.3s ease;
+}
+
+aside .sidebar a:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--color-lightSide-info);
+    height: 53px;
+    gap: 5px;
+    position: absolute;
+    margin: 0 16px;
+    padding: 0 55px;
+    transition: all 0.5s ease;
+    bottom: 2px;
+}
+
+aside .sidebar a.active{
+    display: flex;
+    align-items: center;
+    height: 59.2px;
+    width: 100%;
+    gap: 5px;
+    position: relative;
+    margin: 0 16px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    color: var(--color-primary);
+    background-color: var(--color-lightSide-background);
+    right: 16px;
+}
+
+aside .sidebar a.active::before{
+    content: '';
+    width: 6px;
+    height: 18px;
+    background-color: var(--color-primary);
+}
+aside .sidebar a.active::after{
+    content: '';
+    width: 6px;
+    height: 18px;
+    background-color: var(--color-primary);
+}
+aside .sidebar a:hover:not(a.active):not(a:last-child) {
+    display: flex;
+    align-items: center;
+    height: 59.2px;
+    width: 90%;
+    gap: 5px;
+    position: relative;
+    padding: 0 25px;
+    transition: all 0.3s ease;
+    color: var(--color-primary);
+    left: 8px;
+}
+aside .sidebar a:last-child:hover {
+    /*
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--color-lightSide-info);
+    height: 53px;
+    gap: 5px;
+    position: absolute;
+    margin: 0 16px;
+    padding: 0 55px;
+    transition: all 0.5s ease;
+    bottom: 2px;
+    */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 55px;
+    gap: 5px;
+    position: absolute;
+    margin: 0 0 0 50%;
+    padding: 0 25px;
+    transition: all 0.3s ease;
+    color: var(--color-primary);
+    bottom: 5px;
+}
+
+aside .sidebar .tickets-count{
+    background-color: var(--color-danger);
+    padding: 2px 6px;
+    color: white;
+    font-size: 11px;
+    border-radius: var(--border-radius2);
+}
+
+
+

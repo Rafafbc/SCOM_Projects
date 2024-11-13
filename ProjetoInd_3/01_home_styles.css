@@ -445,7 +445,7 @@ main .new-users .user-list {
 main .new-users .user-list:hover {
     box-shadow: none;
 }
-/* Verificar depois se retira */
+/* Verificar depois se retira */ 
 main .new-users .user-list > div {
     display: none;
 }
