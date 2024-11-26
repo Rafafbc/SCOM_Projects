@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://b0rtmvps7ijd2"]
+
+[ext_resource type="PackedScene" uid="uid://cwvmwgwaopxco" path="res://Scenes/player.tscn" id="1_ikvyb"]
+[ext_resource type="PackedScene" uid="uid://dt3qapjdhqbtk" path="res://Scenes/Scene2/tile_map2.tscn" id="2_a2auo"]
+[ext_resource type="PackedScene" uid="uid://dnnsunl6a3lhq" path="res://Scenes/Scene2/traps2.tscn" id="3_il10i"]
+[ext_resource type="PackedScene" uid="uid://dguos55j0p2u2" path="res://Scenes/Scene2/enemies2.tscn" id="4_omkg7"]
+[ext_resource type="PackedScene" uid="uid://bg6ggptrttgpq" path="res://Scenes/hud-fruits.tscn" id="5_5bg56"]
+[ext_resource type="PackedScene" uid="uid://bpoll4blull1p" path="res://Scenes/pass_fase.tscn" id="6_m4scc"]
+
+[node name="Virtual_Guy2" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_ikvyb")]
+position = Vector2(45, 80)
+
+[node name="TileMap_2" parent="." instance=ExtResource("2_a2auo")]
+
+[node name="Traps" type="Node2D" parent="."]
+
+[node name="Traps_2" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(116, 492)
+
+[node name="Traps_3" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(155, 492)
+
+[node name="Traps_4" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(194, 492)
+
+[node name="Traps_5" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(233, 492)
+
+[node name="Traps_6" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(272, 492)
+
+[node name="Traps_7" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(311, 492)
+
+[node name="Traps_8" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(350, 492)
+
+[node name="Traps_9" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(389, 492)
+
+[node name="Traps_10" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(428, 492)
+
+[node name="Traps_11" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(467, 492)
+
+[node name="Traps_12" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(506, 492)
+
+[node name="Traps_13" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(545, 492)
+
+[node name="enemies_2" parent="." instance=ExtResource("4_omkg7")]
+position = Vector2(576, 129)
+
+[node name="Control" parent="." instance=ExtResource("5_5bg56")]
+
+[node name="Pass Phase" parent="." instance=ExtResource("6_m4scc")]
+position = Vector2(1150, 448)

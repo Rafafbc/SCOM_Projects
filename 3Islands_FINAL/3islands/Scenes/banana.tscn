@@ -1,0 +1,151 @@
+[gd_scene load_steps=22 format=3 uid="uid://b86h71fv2gf3a"]
+
+[ext_resource type="Script" path="res://Scripts/banana.gd" id="1_6xd2w"]
+[ext_resource type="Texture2D" uid="uid://banp2165ykotp" path="res://Pixel Adventure 1/Free/Items/Fruits/Bananas.png" id="1_wf1ps"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fur6t"]
+atlas = ExtResource("1_wf1ps")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26gw0"]
+atlas = ExtResource("1_wf1ps")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pciq0"]
+atlas = ExtResource("1_wf1ps")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydq2c"]
+atlas = ExtResource("1_wf1ps")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uwlk"]
+atlas = ExtResource("1_wf1ps")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hyuq"]
+atlas = ExtResource("1_wf1ps")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eaokt"]
+atlas = ExtResource("1_wf1ps")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xm5px"]
+atlas = ExtResource("1_wf1ps")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnt16"]
+atlas = ExtResource("1_wf1ps")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gopck"]
+atlas = ExtResource("1_wf1ps")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32xmj"]
+atlas = ExtResource("1_wf1ps")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_seu8v"]
+atlas = ExtResource("1_wf1ps")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvx58"]
+atlas = ExtResource("1_wf1ps")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyi46"]
+atlas = ExtResource("1_wf1ps")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8lou3"]
+atlas = ExtResource("1_wf1ps")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6a8k"]
+atlas = ExtResource("1_wf1ps")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifsqw"]
+atlas = ExtResource("1_wf1ps")
+region = Rect2(512, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lh2or"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fur6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26gw0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pciq0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydq2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5uwlk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hyuq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eaokt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xm5px")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnt16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gopck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32xmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_seu8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvx58")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyi46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8lou3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6a8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifsqw")
+}],
+"loop": true,
+"name": &"Idle-Banana",
+"speed": 25.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b7hw7"]
+radius = 15.0
+
+[node name="Banana" type="Area2D"]
+collision_mask = 256
+script = ExtResource("1_6xd2w")
+
+[node name="AnimatedSprite2D_banana" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_lh2or")
+animation = &"Idle-Banana"
+frame = 16
+frame_progress = 0.581442
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_b7hw7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

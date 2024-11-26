@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2irfb73syxe0"]
+
+[ext_resource type="FontFile" uid="uid://o4llbolkssls" path="res://Pixel Adventure 1/Free/Menu/Text/RevMiniPixel.ttf" id="1_b1j64"]
+[ext_resource type="Script" path="res://Cenas_3Islands/Scripts/Login.gd" id="1_i5x2w"]
+[ext_resource type="Texture2D" uid="uid://8fws6rxmqqsq" path="res://fundo2.png" id="2_ui62d"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i5x2w")
+
+[node name="fundo" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.419608)
+position = Vector2(23.0001, 17)
+scale = Vector2(1.11523, 0.640625)
+texture = ExtResource("2_ui62d")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -46.0
+offset_right = 180.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_b1j64")
+theme_override_font_sizes/font_size = 32
+text = "Login"
+horizontal_alignment = 1
+
+[node name="UsernameInput" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_b1j64")
+theme_override_font_sizes/font_size = 24
+placeholder_text = "Nome de usuário"
+
+[node name="PasswordInput" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_b1j64")
+theme_override_font_sizes/font_size = 24
+placeholder_text = "Senha"
+secret = true
+
+[node name="LoginButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_b1j64")
+theme_override_font_sizes/font_size = 16
+text = "Entrar"
+
+[node name="RegisterButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_b1j64")
+theme_override_font_sizes/font_size = 16
+text = "Cadastrar"
+
+[node name="ErrorLabel" type="Label" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.124572, 0.0864938, 1)
+theme_override_fonts/font = ExtResource("1_b1j64")
+theme_override_font_sizes/font_size = 16
+text = "Erro"
+
+[node name="LoginButton2" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0.811765)
+layout_mode = 2
+offset_left = -101.0
+offset_top = 237.0
+offset_right = 199.0
+offset_bottom = 261.0
+theme_override_fonts/font = ExtResource("1_b1j64")
+theme_override_font_sizes/font_size = 16
+text = "Continuar se Login (Visitante)"

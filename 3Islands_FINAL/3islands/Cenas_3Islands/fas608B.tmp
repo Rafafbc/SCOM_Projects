@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmrmyq3natl2g"]
+
+[ext_resource type="PackedScene" uid="uid://dtlu7cygr6yn1" path="res://Cenas_3Islands/player.tscn" id="1_h3akp"]
+[ext_resource type="PackedScene" uid="uid://ftsffi042jj8" path="res://Cenas_3Islands/tile_map.tscn" id="2_f6ypx"]
+
+[node name="FASE" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_h3akp")]
+position = Vector2(129, 91)
+
+[node name="MAP" parent="." instance=ExtResource("2_f6ypx")]

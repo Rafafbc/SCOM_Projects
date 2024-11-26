@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=3 uid="uid://ce3e0btehhny0"]
+
+[ext_resource type="Script" path="res://Cenas_3Islands/Scripts/Cadastro.gd" id="1_exftp"]
+[ext_resource type="FontFile" uid="uid://o4llbolkssls" path="res://Pixel Adventure 1/Free/Menu/Text/RevMiniPixel.ttf" id="1_jgqgt"]
+[ext_resource type="Texture2D" uid="uid://8fws6rxmqqsq" path="res://fundo2.png" id="2_ywiuw"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_exftp")
+
+[node name="fundo" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.419608)
+position = Vector2(20.0001, 30.9999)
+scale = Vector2(1.15039, 0.640625)
+texture = ExtResource("2_ywiuw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -46.0
+offset_right = 180.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_jgqgt")
+theme_override_font_sizes/font_size = 32
+text = "Cadastro"
+horizontal_alignment = 1
+
+[node name="UsernameInput" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_jgqgt")
+theme_override_font_sizes/font_size = 24
+placeholder_text = "Nome de usuário"
+
+[node name="PasswordInput" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_jgqgt")
+theme_override_font_sizes/font_size = 24
+placeholder_text = "Senha"
+secret = true
+
+[node name="ConfirmPasswordInput" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_jgqgt")
+theme_override_font_sizes/font_size = 24
+placeholder_text = "Confirme sua senha"
+secret = true
+
+[node name="RegisterButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_jgqgt")
+theme_override_font_sizes/font_size = 16
+text = "Cadastrar
+"
+
+[node name="BackToLoginButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_jgqgt")
+theme_override_font_sizes/font_size = 16
+text = "Voltar para o Login"
+
+[node name="ErrorLabel" type="Label" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.124572, 0.0864938, 1)
+theme_override_fonts/font = ExtResource("1_jgqgt")
+theme_override_font_sizes/font_size = 16
+text = "Erro"

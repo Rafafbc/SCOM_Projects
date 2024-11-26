@@ -1,0 +1,157 @@
+[gd_scene load_steps=21 format=3 uid="uid://cb7vwrcdcow1l"]
+
+[ext_resource type="Script" path="res://Cenas/Scripts/hud_script.gd" id="1_ypb5j"]
+[ext_resource type="Texture2D" uid="uid://cs3k4g6sl4ra8" path="res://Free/Items/Fruits/Apple.png" id="2_qfb5q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0wb0"]
+atlas = ExtResource("2_qfb5q")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bf68y"]
+atlas = ExtResource("2_qfb5q")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wg1gf"]
+atlas = ExtResource("2_qfb5q")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bknkq"]
+atlas = ExtResource("2_qfb5q")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8h17e"]
+atlas = ExtResource("2_qfb5q")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hl67a"]
+atlas = ExtResource("2_qfb5q")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8cm6"]
+atlas = ExtResource("2_qfb5q")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfgxm"]
+atlas = ExtResource("2_qfb5q")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1f80"]
+atlas = ExtResource("2_qfb5q")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6uat"]
+atlas = ExtResource("2_qfb5q")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8l0fx"]
+atlas = ExtResource("2_qfb5q")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5u6k"]
+atlas = ExtResource("2_qfb5q")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evysn"]
+atlas = ExtResource("2_qfb5q")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3u46h"]
+atlas = ExtResource("2_qfb5q")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wx4gc"]
+atlas = ExtResource("2_qfb5q")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtqhq"]
+atlas = ExtResource("2_qfb5q")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i81mg"]
+atlas = ExtResource("2_qfb5q")
+region = Rect2(512, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xgr6b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0wb0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bf68y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wg1gf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bknkq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8h17e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hl67a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8cm6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfgxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1f80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6uat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8l0fx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5u6k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evysn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3u46h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wx4gc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtqhq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i81mg")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ypb5j")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 956.114
+offset_top = 33.6326
+offset_right = 1023.11
+offset_bottom = 56.6326
+text = "Maças: 0"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
+texture_repeat = 2
+position = Vector2(936.002, 45.9797)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_xgr6b")
+animation = &"Idle"
+frame = 16

@@ -1,0 +1,155 @@
+[gd_scene load_steps=21 format=3 uid="uid://bg6ggptrttgpq"]
+
+[ext_resource type="Script" path="res://Scripts/hud_Kiwi.gd" id="1_ir68f"]
+[ext_resource type="Texture2D" uid="uid://dgr50omtu57h" path="res://Pixel Adventure 1/Free/Items/Fruits/Kiwi.png" id="2_dugcr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w23ml"]
+atlas = ExtResource("2_dugcr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2nds"]
+atlas = ExtResource("2_dugcr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cuhaw"]
+atlas = ExtResource("2_dugcr")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4iy2"]
+atlas = ExtResource("2_dugcr")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtu0o"]
+atlas = ExtResource("2_dugcr")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovqlf"]
+atlas = ExtResource("2_dugcr")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jarju"]
+atlas = ExtResource("2_dugcr")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3y0a1"]
+atlas = ExtResource("2_dugcr")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0m1v"]
+atlas = ExtResource("2_dugcr")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vm1pj"]
+atlas = ExtResource("2_dugcr")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_888c8"]
+atlas = ExtResource("2_dugcr")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fc568"]
+atlas = ExtResource("2_dugcr")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lpvu"]
+atlas = ExtResource("2_dugcr")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gw6jo"]
+atlas = ExtResource("2_dugcr")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nig3f"]
+atlas = ExtResource("2_dugcr")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dc661"]
+atlas = ExtResource("2_dugcr")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlm5u"]
+atlas = ExtResource("2_dugcr")
+region = Rect2(512, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y7bxh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w23ml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2nds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cuhaw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4iy2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtu0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovqlf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jarju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3y0a1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0m1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vm1pj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_888c8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fc568")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lpvu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gw6jo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nig3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dc661")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tlm5u")
+}],
+"loop": true,
+"name": &"count-Kiwi",
+"speed": 16.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1150.0
+offset_bottom = 40.0
+script = ExtResource("1_ir68f")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 1082.0
+offset_top = 3.0
+offset_right = 1149.0
+offset_bottom = 26.0
+size_flags_horizontal = 8
+text = "Frutas: 0"
+
+[node name="AnimatedSprite2D_Kiwi" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(1067, 15)
+scale = Vector2(1.25, 1.25)
+sprite_frames = SubResource("SpriteFrames_y7bxh")
+animation = &"count-Kiwi"
+frame_progress = 0.115914

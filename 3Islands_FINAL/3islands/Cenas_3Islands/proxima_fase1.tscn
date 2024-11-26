@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://58r46y7eqn0t"]
+
+[ext_resource type="Script" path="res://Cenas_3Islands/Scripts/proxima_fase_SCRIPT.gd" id="1_egc7r"]
+[ext_resource type="Texture2D" uid="uid://1shskmii6ekp" path="res://Pixel Adventure 1/Free/Items/Checkpoints/Checkpoint/Checkpoint (No Flag).png" id="1_qbggx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nvwy3"]
+size = Vector2(7, 47)
+
+[node name="Passa_fase" type="Area2D"]
+scale = Vector2(2, 2)
+collision_layer = 2
+script = ExtResource("1_egc7r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, -6)
+texture = ExtResource("1_qbggx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(3.5, 3.5)
+shape = SubResource("RectangleShape2D_nvwy3")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

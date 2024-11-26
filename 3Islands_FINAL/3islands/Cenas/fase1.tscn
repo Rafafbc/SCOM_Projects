@@ -1,0 +1,168 @@
+[gd_scene load_steps=13 format=4 uid="uid://yhqsyt3yu3kw"]
+
+[ext_resource type="PackedScene" uid="uid://dp4lgnh5264tj" path="res://Cenas/player.tscn" id="1_22c2m"]
+[ext_resource type="Texture2D" uid="uid://csciees3w2x5l" path="res://Free/Background/Brown.png" id="1_wpuhk"]
+[ext_resource type="PackedScene" uid="uid://ccytcxx8sqrdv" path="res://Cenas/tile_map.tscn" id="2_tu2p7"]
+[ext_resource type="Texture2D" uid="uid://1pfyjxw8g50y" path="res://Cenas_3Islands/placa.png" id="3_r4cyh"]
+[ext_resource type="PackedScene" uid="uid://cn0i22rsbtqrj" path="res://Cenas/Sal.tscn" id="3_rbxem"]
+[ext_resource type="PackedScene" uid="uid://doajd2pwbmf7n" path="res://Cenas/apple.tscn" id="4_6a3p4"]
+[ext_resource type="PackedScene" uid="uid://cb7vwrcdcow1l" path="res://Cenas/Hud.tscn" id="5_46uvd"]
+[ext_resource type="PackedScene" uid="uid://c8acc131achhh" path="res://Cenas/check.tscn" id="6_1p8ru"]
+[ext_resource type="Script" path="res://Cenas/Scripts/check1_script.gd" id="7_c74q0"]
+[ext_resource type="Script" path="res://Cenas/Scripts/alert_4.gd" id="10_4lv2p"]
+[ext_resource type="Texture2D" uid="uid://bq16ja8jqw4gq" path="res://Cenas_3Islands/speech.png" id="11_ifhbb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_usr5x"]
+size = Vector2(66, 86)
+
+[node name="Fase" type="Node2D"]
+position = Vector2(0, -1)
+
+[node name="Fundo" type="Sprite2D" parent="."]
+modulate = Color(0.992805, 0.969682, 0.946732, 1)
+position = Vector2(577.812, 310.787)
+scale = Vector2(18.0153, 10.6808)
+texture = ExtResource("1_wpuhk")
+
+[node name="Fundo2" type="Sprite2D" parent="."]
+modulate = Color(0.384314, 0.47451, 0.647059, 1)
+position = Vector2(98.664, 129.931)
+rotation = -1.5708
+scale = Vector2(2.10333, 3.07347)
+texture = ExtResource("1_wpuhk")
+
+[node name="Player" parent="." instance=ExtResource("1_22c2m")]
+position = Vector2(64, 496)
+scale = Vector2(1, 1)
+
+[node name="Placa" type="Sprite2D" parent="."]
+position = Vector2(586, 487)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_r4cyh")
+
+[node name="TileMapLayer" parent="." instance=ExtResource("2_tu2p7")]
+scale = Vector2(2.04545, 2)
+tile_map_data = PackedByteArray("AAATABAAAAAMAAEAAAAUABAAAAAMAAEAAAAVABAAAAAMAAEAAAAXAA4AAAAMAAEAAAAYAA4AAAAMAAEAAAAXAA8AAAANAAEAAAAXABAAAAANAAIAAAAYAA8AAAAOAAEAAAAYABAAAAAOAAIAAAAWAA4AAAAPAAAAAAAWAA8AAAAPAAEAAAAWABAAAAAPAAIAAAAVAA8AAAAMAAEAAAAUAA8AAAAMAAEAAAAZAA8AAAAMAAEAAAAZABAAAAAMAAEAAAAaABAAAAAMAAEAAAABAAEAAAAMAAQAAAACAAEAAAANAAQAAAADAAEAAAAOAAQAAAADAAAAAAAMAAQAAAAEAAAAAAANAAQAAAAFAAAAAAAOAAQAAAAAAAAAAAAMAAQAAAABAAAAAAANAAQAAAACAAAAAAAOAAQAAAAAAAEAAAAMAAUAAAAGAAIAAAAMAAUAAAAGAAEAAAAMAAUAAAAFAAEAAAAMAAUAAAAEAAEAAAAMAAUAAAAbAAoAAAARAAEAAAAcAAoAAAASAAEAAAAdAAoAAAATAAEAAAAAAAYAAAABAAgAAAAAAAcAAAAMAAUAAAAAAAgAAAAMAAQAAAABAAcAAAAMAAQAAAAAAAkAAAAMAAUAAAABAAgAAAAOAAQAAAACAAcAAAANAAQAAAADAAcAAAAOAAQAAAAEAAcAAAAMAAQAAAAFAAcAAAANAAQAAAAGAAcAAAAOAAQAAAAGAAYAAAAMAAUAAAAFAAYAAAABAAgAAAAEAAYAAAABAAgAAAADAAYAAAABAAgAAAACAAYAAAABAAgAAAABAAYAAAABAAgAAAD//wAAAAAHAAQAAFD//wEAAAAHAAQAAFD//wIAAAAHAAQAAFD//wMAAAAHAAQAAFD//wQAAAAHAAQAAFD//wUAAAAHAAQAAFD//wYAAAAHAAQAAFD//wcAAAAHAAQAAFD//wgAAAAHAAQAAFD//wkAAAAHAAQAAFD//woAAAAHAAQAAFD//wsAAAAHAAQAAFD//wwAAAAHAAQAAFD//w0AAAAHAAQAAFD//w4AAAAHAAQAAFD//w8AAAAHAAQAAFD//xAAAAAHAAQAAFAAABEAAAAGAAQAAAAAABIAAAAJAAQAAAAAABMAAAAJAAUAAAABABEAAAAHAAQAAAABABIAAAAKAAQAAAABABMAAAAKAAUAAAACABEAAAAHAAQAAAACABIAAAAHAAUAAAACABMAAAAHAAUAAAADABEAAAAHAAQAAAADABIAAAAHAAUAAAADABMAAAAHAAUAAAAEABEAAAAHAAQAAAAEABIAAAAHAAUAAAAEABMAAAAHAAUAAAAFABEAAAAHAAQAAAAFABIAAAAHAAUAAAAFABMAAAAHAAUAAAAGABEAAAAHAAQAAAAGABIAAAAHAAUAAAAGABMAAAAHAAUAAAAHABEAAAAHAAQAAAAHABIAAAAHAAUAAAAHABMAAAAHAAUAAAAIABEAAAAHAAQAAAAIABIAAAAHAAUAAAAIABMAAAAHAAUAAAAJABEAAAAHAAQAAAAJABIAAAAHAAUAAAAJABMAAAAHAAUAAAAKABEAAAAHAAQAAAAKABIAAAAHAAUAAAAKABMAAAAHAAUAAAALABEAAAAHAAQAAAALABIAAAAHAAUAAAALABMAAAAHAAUAAAAMABEAAAAHAAQAAAAMABIAAAAHAAUAAAAMABMAAAAHAAUAAAANABEAAAAHAAQAAAANABIAAAAJAAQAAAANABMAAAAJAAUAAAAOABEAAAAHAAQAAAAOABIAAAAKAAQAAAAOABMAAAAKAAUAAAAPABEAAAAHAAQAAAAPABIAAAAHAAUAAAAPABMAAAAHAAUAAAAQABEAAAAHAAQAAAAQABIAAAAHAAUAAAAQABMAAAAHAAUAAAARABEAAAAHAAQAAAARABIAAAAHAAUAAAARABMAAAAHAAUAAAASABEAAAAHAAQAAAASABIAAAAHAAUAAAASABMAAAAHAAUAAAATABEAAAAHAAQAAAATABIAAAAHAAUAAAATABMAAAAHAAUAAAAUABEAAAAHAAQAAAAUABIAAAAHAAUAAAAUABMAAAAHAAUAAAAVABEAAAAHAAQAAAAVABIAAAAHAAUAAAAVABMAAAAHAAUAAAAWABEAAAAHAAQAAAAWABIAAAAHAAUAAAAWABMAAAAHAAUAAAAXABEAAAAHAAQAAAAXABIAAAAHAAUAAAAXABMAAAAHAAUAAAAYABEAAAAHAAQAAAAYABIAAAAHAAUAAAAYABMAAAAHAAUAAAAZABEAAAAHAAQAAAAZABIAAAAHAAUAAAAZABMAAAAHAAUAAAAaABEAAAAHAAQAAAAaABIAAAAHAAUAAAAaABMAAAAHAAUAAAAbABEAAAAHAAQAAAAbABIAAAAHAAUAAAAbABMAAAAHAAUAAAAcABEAAAAHAAQAAAAcABIAAAAHAAUAAAAcABMAAAAHAAUAAAAdABEAAAAHAAQAAAAdABIAAAAHAAUAAAAdABMAAAAHAAUAAAAeABEAAAAHAAQAAAAeABIAAAAHAAUAAAAeABMAAAAHAAUAAAAfABEAAAAHAAQAAAAfABIAAAAHAAUAAAAfABMAAAAHAAUAAAAgABEAAAAHAAQAAAAgABIAAAAHAAUAAAAgABMAAAAHAAUAAAAhABEAAAAHAAQAAAAhABIAAAAHAAUAAAAhABMAAAAHAAUAAAAiABEAAAAHAAQAAAAiABIAAAAHAAUAAAAiABMAAAAHAAUAAAAjABEAAAAHAAUAAAAjABIAAAAHAAUAAAAjABMAAAAHAAUAAAAAABQAAAAHAAUAAAABABQAAAAHAAUAAAACABQAAAAHAAUAAAADABQAAAAHAAUAAAAEABQAAAAHAAUAAAAFABQAAAAHAAUAAAAGABQAAAAHAAUAAAAHABQAAAAHAAUAAAAIABQAAAAHAAUAAAAJABQAAAAHAAUAAAAKABQAAAAHAAUAAAALABQAAAAHAAUAAAAMABQAAAAHAAUAAAANABQAAAAHAAUAAAAOABQAAAAHAAUAAAAPABQAAAAHAAUAAAAQABQAAAAHAAUAAAARABQAAAAHAAUAAAASABQAAAAHAAUAAAATABQAAAAHAAUAAAAUABQAAAAHAAUAAAAVABQAAAAHAAUAAAAWABQAAAAHAAUAAAAXABQAAAAHAAUAAAAYABQAAAAHAAUAAAAZABQAAAAHAAUAAAAaABQAAAAHAAUAAAAbABQAAAAHAAUAAAAcABQAAAAHAAUAAAAdABQAAAAHAAUAAAAeABQAAAAHAAUAAAAfABQAAAAHAAUAAAAgABQAAAAHAAUAAAAhABQAAAAHAAUAAAAiABQAAAAHAAUAAAAjABQAAAAHAAUAAAAjAAAAAAAHAAQAAGAjAAEAAAAHAAQAAGAjAAIAAAAHAAQAAGAjAAMAAAAHAAQAAGAjAAQAAAAHAAQAAGAjAAUAAAAHAAQAAGAjAAYAAAAHAAQAAGAjAAcAAAAHAAQAAGAjAAgAAAAHAAQAAGAjAAkAAAAHAAQAAGAjAAoAAAAHAAQAAGAjAAsAAAAHAAQAAGAjAAwAAAAHAAQAAGAjAA0AAAAHAAQAAGAjAA4AAAAHAAQAAGAjAA8AAAAHAAQAAGAjABAAAAAHAAQAAGD//xEAAAAHAAUAAAD//xIAAAAHAAUAAAD//xMAAAAHAAUAAAD//xQAAAAHAAUAAAD/////AAAHAAUAAAAAAP//AAAHAAUAAAABAP//AAAHAAUAAAACAP//AAAHAAUAAAADAP//AAAHAAUAAAAEAP//AAAHAAUAAAAFAP//AAAHAAUAAAAGAP//AAAHAAUAAAAHAP//AAAHAAUAAAAIAP//AAAHAAUAAAAJAP//AAAHAAUAAAAKAP//AAAHAAUAAAALAP//AAAHAAUAAAAMAP//AAAHAAUAAAANAP//AAAHAAUAAAAOAP//AAAHAAUAAAAPAP//AAAHAAUAAAAQAP//AAAHAAUAAAARAP//AAAHAAUAAAASAP//AAAHAAUAAAATAP//AAAHAAUAAAAUAP//AAAHAAUAAAAVAP//AAAHAAUAAAAWAP//AAAHAAUAAAAXAP//AAAHAAUAAAAYAP//AAAHAAUAAAAZAP//AAAHAAUAAAAaAP//AAAHAAUAAAAbAP//AAAHAAUAAAAcAP//AAAHAAUAAAAdAP//AAAHAAUAAAAeAP//AAAHAAUAAAAfAP//AAAHAAUAAAAgAP//AAAHAAUAAAAhAP//AAAHAAUAAAAiAP//AAAHAAUAAAAjAP//AAAHAAUAAAAWAAYAAAASAAEAAAAXAAYAAAATAAEAAAAVAAYAAAARAAEAAAALAAgAAAARAAEAAAAMAAgAAAASAAEAAAANAAgAAAATAAEAAAAQAAMAAAASAAEAAAARAAMAAAATAAEAAAAPAAMAAAARAAEAAAA=")
+
+[node name="Spikes" type="Node2D" parent="."]
+
+[node name="Area2D13" parent="Spikes" instance=ExtResource("3_rbxem")]
+position = Vector2(1116.09, 64.3074)
+rotation = -1.5708
+scale = Vector2(4, 4)
+
+[node name="Area2D14" parent="Spikes" instance=ExtResource("3_rbxem")]
+position = Vector2(1116.09, 1.41425)
+rotation = -1.5708
+scale = Vector2(4, 4)
+
+[node name="Area2D16" parent="Spikes" instance=ExtResource("3_rbxem")]
+position = Vector2(1117.05, 513.414)
+rotation = -1.5708
+scale = Vector2(4, 4)
+
+[node name="Area2D4" parent="Spikes" instance=ExtResource("3_rbxem")]
+position = Vector2(913.96, 512.63)
+scale = Vector2(4, 4)
+
+[node name="Area2D5" parent="Spikes" instance=ExtResource("3_rbxem")]
+position = Vector2(1035.02, 513.26)
+scale = Vector2(4, 4)
+
+[node name="Area2D6" parent="Spikes" instance=ExtResource("3_rbxem")]
+position = Vector2(1093.34, 512)
+scale = Vector2(4, 4)
+
+[node name="Area2D7" parent="Spikes" instance=ExtResource("3_rbxem")]
+position = Vector2(1117.58, 452.137)
+rotation = -1.5708
+scale = Vector2(4, 4)
+
+[node name="Area2D8" parent="Spikes" instance=ExtResource("3_rbxem")]
+position = Vector2(1117.78, 387.527)
+rotation = -1.5708
+scale = Vector2(4, 4)
+
+[node name="Area2D9" parent="Spikes" instance=ExtResource("3_rbxem")]
+position = Vector2(1117.51, 323.816)
+rotation = -1.5708
+scale = Vector2(4, 4)
+
+[node name="Area2D" parent="Spikes" instance=ExtResource("3_rbxem")]
+position = Vector2(224, 512)
+scale = Vector2(4, 4)
+
+[node name="Area2D2" parent="Spikes" instance=ExtResource("3_rbxem")]
+position = Vector2(287.623, 512)
+scale = Vector2(4, 4)
+
+[node name="Area2D3" parent="Spikes" instance=ExtResource("3_rbxem")]
+position = Vector2(351.527, 512)
+scale = Vector2(4, 4)
+
+[node name="Area2D10" parent="Spikes" instance=ExtResource("3_rbxem")]
+position = Vector2(1116.17, 259.804)
+rotation = -1.5708
+scale = Vector2(4, 4)
+
+[node name="Area2D11" parent="Spikes" instance=ExtResource("3_rbxem")]
+position = Vector2(1116.37, 195.194)
+rotation = -1.5708
+scale = Vector2(4, 4)
+
+[node name="Area2D12" parent="Spikes" instance=ExtResource("3_rbxem")]
+position = Vector2(1116.09, 131.483)
+rotation = -1.5708
+scale = Vector2(4, 4)
+
+[node name="Area2D15" parent="Spikes" instance=ExtResource("3_rbxem")]
+position = Vector2(974.543, 513.26)
+scale = Vector2(4, 4)
+
+[node name="Maças" type="Node2D" parent="."]
+
+[node name="Maça" parent="Maças" instance=ExtResource("4_6a3p4")]
+position = Vector2(408.549, 238.248)
+
+[node name="Maça2" parent="Maças" instance=ExtResource("4_6a3p4")]
+position = Vector2(488.549, 526.248)
+
+[node name="Maça3" parent="Maças" instance=ExtResource("4_6a3p4")]
+position = Vector2(935.17, 305.484)
+
+[node name="Maça4" parent="Maças" instance=ExtResource("4_6a3p4")]
+position = Vector2(536.335, 80.3013)
+
+[node name="Maça5" parent="Maças" instance=ExtResource("4_6a3p4")]
+position = Vector2(732.379, 173.958)
+
+[node name="Control" parent="." instance=ExtResource("5_46uvd")]
+offset_left = 21.4186
+offset_top = 12.5992
+offset_right = 61.4186
+offset_bottom = 52.5992
+
+[node name="Area2D" parent="." instance=ExtResource("6_1p8ru")]
+position = Vector2(33.1431, 139.331)
+script = ExtResource("7_c74q0")
+next_level_path = "res://Cenas/fase2.tscn"
+
+[node name="Check" type="Sprite2D" parent="."]
+
+[node name="Alert4" type="Node2D" parent="."]
+position = Vector2(593, 504)
+script = ExtResource("10_4lv2p")
+
+[node name="textura4" type="Sprite2D" parent="Alert4"]
+visible = false
+position = Vector2(-24, -97)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("11_ifhbb")
+
+[node name="Area4" type="Area2D" parent="Alert4"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Alert4/Area4"]
+visible = false
+position = Vector2(-10, -11)
+shape = SubResource("RectangleShape2D_usr5x")

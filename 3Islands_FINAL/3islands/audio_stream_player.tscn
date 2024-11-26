@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://btu7w7fgibeci"]
+
+[ext_resource type="AudioStream" uid="uid://dansxs5hxsjej" path="res://Cenas_3Islands/Action Scene.mp3" id="1_jg1vi"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_jg1vi")
+volume_db = -33.731
+autoplay = true
+parameters/looping = false

@@ -1,0 +1,107 @@
+[gd_scene load_steps=16 format=3 uid="uid://ca3b2he8lflvl"]
+
+[ext_resource type="Texture2D" uid="uid://kqsvc1pug0pu" path="res://Pixel Adventure 1_/Free/Main Characters/Mask Dude/Idle (32x32).png" id="1_busha"]
+[ext_resource type="Script" path="res://Scripts/guru.gd" id="1_juwbg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17a3f"]
+atlas = ExtResource("1_busha")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uq4it"]
+atlas = ExtResource("1_busha")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0xrw"]
+atlas = ExtResource("1_busha")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6nu7"]
+atlas = ExtResource("1_busha")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wwrr"]
+atlas = ExtResource("1_busha")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uabut"]
+atlas = ExtResource("1_busha")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1q6g"]
+atlas = ExtResource("1_busha")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pm76"]
+atlas = ExtResource("1_busha")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g60n0"]
+atlas = ExtResource("1_busha")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr0wq"]
+atlas = ExtResource("1_busha")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1acw"]
+atlas = ExtResource("1_busha")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ecag4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17a3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uq4it")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0xrw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6nu7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wwrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uabut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1q6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pm76")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g60n0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yr0wq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1acw")
+}],
+"loop": true,
+"name": &"Idle-Mask_Dude",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vnfay"]
+size = Vector2(22, 27)
+
+[node name="Guru" type="CharacterBody2D"]
+scale = Vector2(3, 3)
+collision_layer = 128
+collision_mask = 7
+script = ExtResource("1_juwbg")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ecag4")
+animation = &"Idle-Mask_Dude"
+flip_h = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_vnfay")

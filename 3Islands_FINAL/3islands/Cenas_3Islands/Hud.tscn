@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cle3ykrqiioja"]
+
+[ext_resource type="Script" path="res://Cenas_3Islands/Scripts/hud.gd" id="1_bly0w"]
+[ext_resource type="PackedScene" uid="uid://d5t5n7n3xdil" path="res://Cenas_3Islands/melancia.tscn" id="3_evrgb"]
+[ext_resource type="PackedScene" uid="uid://btcipuwluvbwp" path="res://Cenas_3Islands/fruits.tscn" id="3_r0hme"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 567.0
+offset_top = 15.0
+offset_right = 607.0
+offset_bottom = 55.0
+script = ExtResource("1_bly0w")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 567.0
+offset_top = 15.0
+offset_right = 634.0
+offset_bottom = 38.0
+text = "Frutas: 0"
+
+[node name="melancia" parent="CanvasLayer/Label" instance=ExtResource("3_evrgb")]
+
+[node name="fruits" parent="CanvasLayer/Label" instance=ExtResource("3_r0hme")]
+position = Vector2(-17, 7)

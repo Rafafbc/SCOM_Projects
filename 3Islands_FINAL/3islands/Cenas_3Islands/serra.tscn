@@ -1,0 +1,100 @@
+[gd_scene load_steps=15 format=3 uid="uid://dxyw1ie5vvhcc"]
+
+[ext_resource type="Script" path="res://Cenas_3Islands/Scripts/serra_Script.gd" id="1_88del"]
+[ext_resource type="Texture2D" uid="uid://bv0quq7ha0m1o" path="res://Pixel Adventure 1/Free/Traps/Saw/On (38x38).png" id="1_fqfo6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1ou8"]
+atlas = ExtResource("1_fqfo6")
+region = Rect2(0, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsh47"]
+atlas = ExtResource("1_fqfo6")
+region = Rect2(38, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xl1sl"]
+atlas = ExtResource("1_fqfo6")
+region = Rect2(76, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6enra"]
+atlas = ExtResource("1_fqfo6")
+region = Rect2(114, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dgpi"]
+atlas = ExtResource("1_fqfo6")
+region = Rect2(152, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opv4n"]
+atlas = ExtResource("1_fqfo6")
+region = Rect2(190, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fe5fi"]
+atlas = ExtResource("1_fqfo6")
+region = Rect2(228, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7iuc"]
+atlas = ExtResource("1_fqfo6")
+region = Rect2(266, 0, 38, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ifpfy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1ou8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsh47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xl1sl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6enra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3dgpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opv4n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fe5fi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7iuc")
+}],
+"loop": true,
+"name": &"Serra",
+"speed": 20.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dx5dw"]
+radius = 16.5076
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_583gh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lq0ai"]
+radius = 14.0
+
+[node name="Serra" type="Area2D"]
+script = ExtResource("1_88del")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+physics_interpolation_mode = 1
+sprite_frames = SubResource("SpriteFrames_ifpfy")
+animation = &"Serra"
+frame_progress = 0.175363
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+physics_interpolation_mode = 1
+visible = false
+position = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_dx5dw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+physics_material_override = SubResource("PhysicsMaterial_583gh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_lq0ai")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

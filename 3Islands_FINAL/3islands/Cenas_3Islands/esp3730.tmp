@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://bggkaton78duj"]
+
+[ext_resource type="Script" path="res://Cenas_3Islands/Scripts/espinho_Script.gd" id="1_kc1me"]
+[ext_resource type="Texture2D" uid="uid://2nof4g3uig0t" path="res://Pixel Adventure 1/Free/Traps/Spikes/Idle.png" id="2_p7rn1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pq4fg"]
+size = Vector2(15, 4.75)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_583gh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xxoq"]
+size = Vector2(15, 5)
+
+[node name="Espinho" type="Area2D"]
+script = ExtResource("1_kc1me")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+physics_interpolation_mode = 1
+position = Vector2(-0.5, 5.375)
+shape = SubResource("RectangleShape2D_pq4fg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_p7rn1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_583gh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.5, 5.5)
+shape = SubResource("RectangleShape2D_0xxoq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

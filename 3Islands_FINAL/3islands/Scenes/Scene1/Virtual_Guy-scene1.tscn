@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=3 uid="uid://s5pxghqhrq5y"]
+
+[ext_resource type="PackedScene" uid="uid://cwvmwgwaopxco" path="res://Scenes/player.tscn" id="1_2ab7s"]
+[ext_resource type="Texture2D" uid="uid://cglfvuco41yae" path="res://Pixel Adventure 1_/Free/Background/Yellow.png" id="1_frbhe"]
+[ext_resource type="Texture2D" uid="uid://1pfyjxw8g50y" path="res://Cenas_3Islands/placa.png" id="2_akil0"]
+[ext_resource type="PackedScene" uid="uid://b65c6ywyj87in" path="res://Scenes/Scene1/tile_map1.tscn" id="2_ucti2"]
+[ext_resource type="PackedScene" uid="uid://cnpbta1tatf7c" path="res://Scenes/Scene1/traps1.tscn" id="3_5c1ht"]
+[ext_resource type="PackedScene" uid="uid://bwp7p2130jxbs" path="res://Scenes/kiwi.tscn" id="4_vsed2"]
+[ext_resource type="PackedScene" uid="uid://bg6ggptrttgpq" path="res://Scenes/hud-Kiwi.tscn" id="5_oeeib"]
+[ext_resource type="PackedScene" uid="uid://bpoll4blull1p" path="res://Scenes/pass_fase.tscn" id="6_gp4m2"]
+[ext_resource type="Script" path="res://Scripts/alert_7.gd" id="9_4h8wd"]
+[ext_resource type="Texture2D" uid="uid://bq16ja8jqw4gq" path="res://Cenas_3Islands/speech.png" id="10_dcnlc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbblu"]
+size = Vector2(36.125, 58.375)
+
+[node name="Virtual_Guy1" type="Node2D"]
+
+[node name="Fundo" type="Sprite2D" parent="."]
+self_modulate = Color(0.47788, 0.47788, 0.47788, 1)
+position = Vector2(386.75, 258)
+scale = Vector2(12.0391, 7.9375)
+texture = ExtResource("1_frbhe")
+
+[node name="Placa" type="Sprite2D" parent="."]
+position = Vector2(373, 456)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_akil0")
+
+[node name="Player" parent="." instance=ExtResource("1_2ab7s")]
+position = Vector2(153, 414)
+collision_layer = 257
+
+[node name="TileMap_1" parent="." instance=ExtResource("2_ucti2")]
+
+[node name="Traps" type="Node2D" parent="."]
+
+[node name="Traps_1" parent="Traps" instance=ExtResource("3_5c1ht")]
+
+[node name="Fruits" type="Node2D" parent="."]
+
+[node name="Fruits" parent="Fruits" instance=ExtResource("4_vsed2")]
+position = Vector2(268, 154)
+
+[node name="Fruits2" parent="Fruits" instance=ExtResource("4_vsed2")]
+position = Vector2(698, 325)
+
+[node name="Fruits3" parent="Fruits" instance=ExtResource("4_vsed2")]
+position = Vector2(901, 134)
+
+[node name="Fruits4" parent="Fruits" instance=ExtResource("4_vsed2")]
+position = Vector2(1028, 405)
+
+[node name="Fruits5" parent="Fruits" instance=ExtResource("4_vsed2")]
+position = Vector2(100, 116)
+
+[node name="Control" parent="." instance=ExtResource("5_oeeib")]
+
+[node name="Pass Phase" parent="." instance=ExtResource("6_gp4m2")]
+position = Vector2(1146, 65)
+
+[node name="Alert8" type="Node2D" parent="."]
+position = Vector2(547, 425)
+script = ExtResource("9_4h8wd")
+
+[node name="textura8" type="Sprite2D" parent="Alert8"]
+visible = false
+position = Vector2(-206, -47)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("10_dcnlc")
+
+[node name="Area8" type="Area2D" parent="Alert8"]
+position = Vector2(-181, 37)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Alert8/Area8"]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(3, -3)
+shape = SubResource("RectangleShape2D_wbblu")

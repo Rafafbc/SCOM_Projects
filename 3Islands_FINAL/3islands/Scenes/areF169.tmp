@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpoll4blull1p"]
+
+[ext_resource type="Script" path="res://Scenes/pass_fase.gd" id="1_0yrb2"]
+[ext_resource type="Texture2D" uid="uid://bdqxmuknbwbup" path="res://Pixel Adventure 1/Free/Items/Checkpoints/Checkpoint/Checkpoint (No Flag).png" id="2_8b62i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pylj3"]
+size = Vector2(17, 46)
+
+[node name="Pass Phase" type="Area2D"]
+script = ExtResource("1_0yrb2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_8b62i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-17, 18)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_pylj3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

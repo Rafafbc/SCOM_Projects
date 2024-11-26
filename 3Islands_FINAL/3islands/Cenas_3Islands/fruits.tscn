@@ -1,0 +1,150 @@
+[gd_scene load_steps=22 format=3 uid="uid://btcipuwluvbwp"]
+
+[ext_resource type="Texture2D" uid="uid://77xgqwdce1kk" path="res://Pixel Adventure 1/Free/Items/Fruits/Pineapple.png" id="1_8alwe"]
+[ext_resource type="Script" path="res://Cenas_3Islands/Scripts/fruits_Script.gd" id="1_ba0jh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_njr0b"]
+radius = 6.0
+height = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vn0k3"]
+atlas = ExtResource("1_8alwe")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4o2a8"]
+atlas = ExtResource("1_8alwe")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxf7d"]
+atlas = ExtResource("1_8alwe")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oj3h3"]
+atlas = ExtResource("1_8alwe")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbg2d"]
+atlas = ExtResource("1_8alwe")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ja1v"]
+atlas = ExtResource("1_8alwe")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxqtj"]
+atlas = ExtResource("1_8alwe")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8jrx"]
+atlas = ExtResource("1_8alwe")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0r1v"]
+atlas = ExtResource("1_8alwe")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhci6"]
+atlas = ExtResource("1_8alwe")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_maspx"]
+atlas = ExtResource("1_8alwe")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jaifv"]
+atlas = ExtResource("1_8alwe")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hll6"]
+atlas = ExtResource("1_8alwe")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0iqtg"]
+atlas = ExtResource("1_8alwe")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltdxk"]
+atlas = ExtResource("1_8alwe")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewaye"]
+atlas = ExtResource("1_8alwe")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tak6"]
+atlas = ExtResource("1_8alwe")
+region = Rect2(512, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dwsty"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vn0k3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4o2a8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxf7d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oj3h3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbg2d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ja1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxqtj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8jrx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0r1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhci6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_maspx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jaifv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hll6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0iqtg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltdxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewaye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tak6")
+}],
+"loop": true,
+"name": &"Fruit_Coin",
+"speed": 15.0
+}]
+
+[node name="fruits" type="Area2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_ba0jh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CapsuleShape2D_njr0b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dwsty")
+animation = &"Fruit_Coin"
+frame_progress = 0.582556
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

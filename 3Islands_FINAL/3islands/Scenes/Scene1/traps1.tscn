@@ -1,0 +1,103 @@
+[gd_scene load_steps=16 format=4 uid="uid://cnpbta1tatf7c"]
+
+[ext_resource type="Script" path="res://Scripts/traps_1.gd" id="1_kg0ni"]
+[ext_resource type="Texture2D" uid="uid://dcudulquu802n" path="res://Pixel Adventure 1/Free/Traps/Saw/On (38x38).png" id="2_tb600"]
+[ext_resource type="Texture2D" uid="uid://dpq1chewyq4s" path="res://Pixel Adventure 1/Free/Traps/Saw/Chain.png" id="3_beerr"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_51nje"]
+texture = ExtResource("3_beerr")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_tt6ff"]
+sources/1 = SubResource("TileSetAtlasSource_51nje")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhasc"]
+atlas = ExtResource("2_tb600")
+region = Rect2(0, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1j2e"]
+atlas = ExtResource("2_tb600")
+region = Rect2(38, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rxr0"]
+atlas = ExtResource("2_tb600")
+region = Rect2(76, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rc55"]
+atlas = ExtResource("2_tb600")
+region = Rect2(114, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2x267"]
+atlas = ExtResource("2_tb600")
+region = Rect2(152, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ba5jn"]
+atlas = ExtResource("2_tb600")
+region = Rect2(190, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5yu7"]
+atlas = ExtResource("2_tb600")
+region = Rect2(228, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2qm0"]
+atlas = ExtResource("2_tb600")
+region = Rect2(266, 0, 38, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1tbtm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhasc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1j2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rxr0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rc55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2x267")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ba5jn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5yu7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2qm0")
+}],
+"loop": true,
+"name": &"saw_trap-animation",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e65ps"]
+radius = 20.0998
+
+[node name="Traps_1" type="Node2D"]
+script = ExtResource("1_kg0ni")
+
+[node name="chain" type="TileMapLayer" parent="."]
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAASAAUAAQAAAAAAAAASAAQAAQAAAAAAAAASAAMAAQAAAAAAAAASAAIAAQAAAAAAAAASAAEAAQAAAAAAAAASAAYAAQAAAAAAAAASAAcAAQAAAAAAAAASAAgAAQAAAAAAAAASAAkAAQAAAAAAAAASAAoAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_tt6ff")
+
+[node name="saw_on" type="Area2D" parent="."]
+position = Vector2(592, 176)
+scale = Vector2(2, 2)
+collision_mask = 256
+
+[node name="AnimatedSprite2D_saw_trap" type="AnimatedSprite2D" parent="saw_on"]
+sprite_frames = SubResource("SpriteFrames_1tbtm")
+animation = &"saw_trap-animation"
+frame_progress = 0.0476582
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="saw_on"]
+position = Vector2(0, 0.5)
+shape = SubResource("CircleShape2D_e65ps")
+
+[connection signal="body_entered" from="saw_on" to="." method="_on_saw_on_body_entered"]

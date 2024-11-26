@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cn0i22rsbtqrj"]
+
+[ext_resource type="Script" path="res://Cenas/Scripts/sal_script.gd" id="1_f0pas"]
+[ext_resource type="Texture2D" uid="uid://danq1flxw20s1" path="res://Free/Traps/Spikes/Idle.png" id="1_rx7h4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lahpn"]
+size = Vector2(12.0801, 4.30763)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_f0pas")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.42136, 5.94367)
+shape = SubResource("RectangleShape2D_lahpn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rx7h4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

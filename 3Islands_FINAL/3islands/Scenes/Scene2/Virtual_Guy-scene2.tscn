@@ -1,0 +1,154 @@
+[gd_scene load_steps=14 format=3 uid="uid://b0rtmvps7ijd2"]
+
+[ext_resource type="Texture2D" uid="uid://ddj6d5r4b3u6c" path="res://Pixel Adventure 1_/Free/Background/Pink.png" id="1_cs63x"]
+[ext_resource type="PackedScene" uid="uid://cwvmwgwaopxco" path="res://Scenes/player.tscn" id="1_ikvyb"]
+[ext_resource type="PackedScene" uid="uid://dt3qapjdhqbtk" path="res://Scenes/Scene2/tile_map2.tscn" id="2_a2auo"]
+[ext_resource type="Texture2D" uid="uid://1pfyjxw8g50y" path="res://Cenas_3Islands/placa.png" id="2_twp8b"]
+[ext_resource type="PackedScene" uid="uid://dnnsunl6a3lhq" path="res://Scenes/Scene2/traps2.tscn" id="3_il10i"]
+[ext_resource type="PackedScene" uid="uid://bj0wibbplk4yv" path="res://Scenes/falling_platform2.tscn" id="4_8mot8"]
+[ext_resource type="PackedScene" uid="uid://dguos55j0p2u2" path="res://Scenes/Scene2/enemies2.tscn" id="4_omkg7"]
+[ext_resource type="PackedScene" uid="uid://b86h71fv2gf3a" path="res://Scenes/banana.tscn" id="6_bvwce"]
+[ext_resource type="PackedScene" uid="uid://dbvv1jpjme4wo" path="res://Scenes/hud-Banana.tscn" id="7_1s0h8"]
+[ext_resource type="PackedScene" uid="uid://ca3b2he8lflvl" path="res://Scenes/guru.tscn" id="10_51hmm"]
+[ext_resource type="Script" path="res://Scripts/alert_8.gd" id="10_a04gx"]
+[ext_resource type="Texture2D" uid="uid://bq16ja8jqw4gq" path="res://Cenas_3Islands/speech.png" id="11_8mubo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mswum"]
+size = Vector2(84.5, 73.5)
+
+[node name="Virtual_Guy2" type="Node2D"]
+
+[node name="Fundo" type="Sprite2D" parent="."]
+self_modulate = Color(0.217367, 0.419352, 0.633347, 1)
+position = Vector2(576.5, 264)
+scale = Vector2(18.0156, 8.15625)
+texture = ExtResource("1_cs63x")
+
+[node name="Placa" type="Sprite2D" parent="."]
+position = Vector2(75, 71)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_twp8b")
+
+[node name="Player" parent="." instance=ExtResource("1_ikvyb")]
+position = Vector2(36, 80)
+
+[node name="TileMap_2" parent="." instance=ExtResource("2_a2auo")]
+
+[node name="Traps" type="Node2D" parent="."]
+
+[node name="Traps_2" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(116, 492)
+
+[node name="Traps_3" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(155, 492)
+
+[node name="Traps_4" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(194, 492)
+
+[node name="Traps_5" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(233, 492)
+
+[node name="Traps_6" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(272, 492)
+
+[node name="Traps_7" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(311, 492)
+
+[node name="Traps_8" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(350, 492)
+
+[node name="Traps_9" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(389, 492)
+
+[node name="Traps_10" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(428, 492)
+
+[node name="Traps_11" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(467, 492)
+
+[node name="Traps_12" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(506, 492)
+
+[node name="Traps_13" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(525, 492)
+
+[node name="Traps_14" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(723, 149)
+rotation = 1.5708
+
+[node name="Traps_15" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(723, 188)
+rotation = 1.5708
+
+[node name="Traps_16" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(723, 227)
+rotation = 1.5708
+
+[node name="Traps_17" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(723, 266)
+rotation = 1.5708
+
+[node name="Traps_18" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(723, 305)
+rotation = 1.5708
+
+[node name="Traps_19" parent="Traps" instance=ExtResource("3_il10i")]
+position = Vector2(723, 344)
+rotation = 1.5708
+
+[node name="falling-platform" parent="." instance=ExtResource("4_8mot8")]
+position = Vector2(200, 190)
+
+[node name="falling-platform2" parent="." instance=ExtResource("4_8mot8")]
+position = Vector2(371, 379)
+
+[node name="enemies_2" parent="." instance=ExtResource("4_omkg7")]
+position = Vector2(574, 130)
+
+[node name="Bananas" type="Node2D" parent="."]
+position = Vector2(199, 317)
+
+[node name="Banana" parent="Bananas" instance=ExtResource("6_bvwce")]
+position = Vector2(-1.75012, 3.52267)
+
+[node name="Banana2" parent="Bananas" instance=ExtResource("6_bvwce")]
+position = Vector2(242, -117)
+
+[node name="Banana3" parent="Bananas" instance=ExtResource("6_bvwce")]
+position = Vector2(565, 59)
+
+[node name="Banana4" parent="Bananas" instance=ExtResource("6_bvwce")]
+position = Vector2(185, -288)
+
+[node name="Banana5" parent="Bananas" instance=ExtResource("6_bvwce")]
+position = Vector2(631, -284)
+
+[node name="Banana6" parent="Bananas" instance=ExtResource("6_bvwce")]
+position = Vector2(471, -205)
+
+[node name="Banana7" parent="Bananas" instance=ExtResource("6_bvwce")]
+position = Vector2(763, -219)
+
+[node name="Control" parent="." instance=ExtResource("7_1s0h8")]
+
+[node name="Guru" parent="." instance=ExtResource("10_51hmm")]
+position = Vector2(1112, 80)
+
+[node name="Alert8" type="Node2D" parent="."]
+position = Vector2(256, 112)
+script = ExtResource("10_a04gx")
+
+[node name="textura8" type="Sprite2D" parent="Alert8"]
+visible = false
+position = Vector2(-178, -55)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("11_8mubo")
+
+[node name="Area8" type="Area2D" parent="Alert8"]
+visible = false
+position = Vector2(-61, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Alert8/Area8"]
+visible = false
+position = Vector2(-116, 48)
+shape = SubResource("RectangleShape2D_mswum")
