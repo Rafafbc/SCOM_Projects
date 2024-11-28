@@ -445,11 +445,11 @@ main .new-users .user-list {
 main .new-users .user-list:hover {
     box-shadow: none;
 }
-/* Verificar depois se retira 
+/* Verificar depois se retira */ 
 main .new-users .user-list > div {
     display: none;
 }
-*/
+
 main .new-users .user {
     display: flex;
     flex-direction: column;
@@ -464,46 +464,25 @@ main .new-users .user-list .user img {
     border-radius: 50%;
 }
 
-main .new-users .user-list .user .btn-detalhes_usuario {
-    font-family: "Open Sans", sans-serif;
-    font-size: 13px;
-    letter-spacing: 2px;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #000;
-    cursor: pointer;
-    border: 3px solid;
-    padding: 0.25em 0.5em;
-    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
-    position: relative;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-}
-main .new-users .user-list .user .btn-detalhes_usuario:active {
-    box-shadow: 0px 0px 0px 0px;
-    top: 5px;
-    left: 5px;
-}
-
-/* Estilização da Tabela de Detalhes de Usuário */
-main .users-details {
+/* Estilização da Tabela de Pedidos Recentes */
+main .recent-orders {
     margin-top: 20.8px;
 }
 
-main .users-details h2 {
+main .recent-orders h2 {
     margin-bottom: 12.8px;
 }
 
-main .users-details table {
+main .recent-orders table {
     background-color: var(--color-background2);
     width: 100%;
     padding: var(--card-padding);
     text-align: center;
     box-shadow: var(--box-shadow);
+    border-radius: var(--card-border-radius);
     transition: all 0.3s ease;
 }
-main .users-details table:hover {
+main .recent-orders table:hover {
     box-shadow: none;
 }
 
@@ -511,7 +490,8 @@ main .users-details table:hover {
 main table th {
     display: none;
 }
-
+*/
+/*
 main table tbody td{
     display: none;
     height: 44.8px;
@@ -520,57 +500,11 @@ main table tbody td{
 }
 */
 
-.users-details #detalhes > div{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 16% 84%;
-}
-
-.users-details #detalhes div img {
-    padding: 0px;
-    margin: 0px;
-    height: 100px;
-    width: 100px;
-    position: relative;
-    border: 3px solid black;
-    border-radius: 5px;
-    margin-bottom: 0.5px;
-}
-
-.users-details #detalhes table {
-    border-collapse: collapse;
-    width: 100%;
-    border-right: 1px solid var(--color-info);
-    border-left: 1px solid var(--color-info);
-    border-top: 2px solid var(--color-info);
-    border-bottom: 2px solid var(--color-info);
-}
-/* Fundo para linhas ímpares */
-.users-details #detalhes tr:nth-child(odd) {
-    background-color: var(--color-background);
-}
-/* Fundo para linhas pares */
-.users-details #detalhes tr:nth-child(even) {
-    background-color: transparent;
-}
-
-.users-details #detalhes td:first-child{
-    font-weight: bold;
-    text-align: left;
-    vertical-align: middle;
-    width: 50%;
-}
-.users-details #detalhes td:last-child{
-    text-align: left;
-    vertical-align: middle;
-    width: 50%;
-}
-
 main table tbody tr:last-child td {
     border: none;
 }
 
-main .users-details a {
+main .recent-orders a {
     text-align: center;
     display: block;
     margin: 16px auto;
@@ -782,7 +716,7 @@ main .users-details a {
         flex-basis: 40%;
     }
 
-    main .users-details {
+    main .recent-orders {
         width: 94%;
         position: absolute;
         left: 50%;
@@ -790,13 +724,13 @@ main .users-details a {
         margin: 32px 0 0 12.8px;
     }
 
-    main .users-details table {
+    main .recent-orders table {
         width: 83vw;
     }
-    main .users-details table tbody tr td:last-child, main .users-details table tbody tr td:first-child{
+    main .recent-orders table tbody tr td:last-child, main .recent-orders table tbody tr td:first-child{
         display: none;
     }
-    main .users-details table thead tr th:last-child, main .users-details table thead tr th:first-child{
+    main .recent-orders table thead tr th:last-child, main .recent-orders table thead tr th:first-child{
         display: none;
     }
 
@@ -879,13 +813,13 @@ main .users-details a {
         flex-basis: 45%;
     }
 
-    main .users-details {
+    main .recent-orders {
         position: relative;
         margin: 48px 0 0 0;
         width: 100%;
     }
 
-    main .users-details table {
+    main .recent-orders table {
         width: 100%;
         margin: 0;
     }

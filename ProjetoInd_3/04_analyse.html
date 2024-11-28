@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link de referência usado para acessar e inserir Icones do Google Fonts à página HTML-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Estilização da Página -->
+    <link rel="stylesheet" href="04_analyse.css">
+
+    <!-- Firebase App -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js"></script>
+
+    <title>ESC - Dashboard</title>
+</head>
+<body>
+    <div class="container-1">
+        <!-- Seção da Sidebar -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img id="LINCE-logo" src="images/LINCE-logo.png">
+                    <img id="LINCE-name" src="images/LINCE-whiteMode-S_ICTS.png">
+                    <!--<h2>Lince</h2>-->
+                </div>
+
+                <div class="close" id="close-btn">
+                    <span class="material-symbols-outlined">
+                        <b>keyboard_double_arrow_left</b>
+                    </span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="index.html">
+                    <span class="material-symbols-outlined">
+                        info
+                    </span>
+                    <h3>Informações</h3>
+                </a>
+
+                <a href="02_users_admin.html">
+                    <span class="material-symbols-outlined">
+                        group
+                    </span>
+                    <h3>Usuários</h3>
+                </a>
+                
+                <a href="#">
+                    <span class="material-symbols-outlined">
+                        receipt_long
+                    </span>
+                    <h3>Histórico</h3>
+                </a>
+                
+                <a href="#" class="active">
+                    <span class="material-symbols-outlined">
+                        query_stats
+                    </span>
+                    <h3>Análises</h3>
+                </a>
+
+                <!--
+                <a href="#">
+                    <span class="material-symbols-outlined">
+                        local_activity
+                    </span>
+                    <h3>Bilhete</h3>
+                    <span class="tickets-count">30</span>
+                </a>
+                -->
+
+                <a href="#">
+                    <span class="material-symbols-outlined">
+                        inventory
+                    </span>
+                    <h3>Inventário</h3>
+                </a>
+
+                <a href="#">
+                    <span class="material-symbols-outlined">
+                        brightness_alert
+                    </span>
+                    <h3>Alertas</h3>
+                </a>
+
+                <a href="#">
+                    <span class="material-symbols-outlined">
+                        settings
+                    </span>
+                    <h3>Configurações</h3>
+                </a>
+
+                <a href="#">
+                    <span class="material-symbols-outlined">
+                        login
+                    </span>
+                    <h3>Login</h3>
+                </a>
+
+                <a href="#">
+                    <span class="material-symbols-outlined">
+                        logout
+                    </span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Seção do Conteúdo Principal -->
+        <main>
+            <h1>Análise dos dados</h1>
+            <!-- Análises -->
+            <div class="analyse">
+                <div class="pressure">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Pressão atmosférica</h3>
+                            <!--<h1>$65,240</h1>-->
+                            <button class="analyse_btn" id="press-btn" onclick="plotPressChart()">
+                                <span class="material-symbols-outlined">
+                                    monitoring
+                                </span>
+                            </button>
+                        </div>
+                        
+                        <div class="icon">
+                            <span class="material-symbols-outlined">
+                                air
+                            </span>
+                            <!--
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+
+                            <div class="percentage">
+                                <p>+81%</p>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="temp">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Temperatura do ar</h3>
+                            <button class="analyse_btn" id="temp-btn" onclick="plotTempChart()">
+                                <span class="material-symbols-outlined">
+                                    monitoring
+                                </span>
+                            </button>
+                        </div>
+                        
+                        <div class="icon">
+                            <span class="material-symbols-outlined">
+                                thermostat
+                            </span>
+                            <!--
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+
+                            <div class="percentage">
+                                <p>-48%</p>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="humidity">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Umidade relativa</h3>
+                            <button class="analyse_btn" id="humid-btn" onclick="plotHumidChart()">
+                                <span class="material-symbols-outlined">
+                                    monitoring
+                                </span>
+                            </button>
+                        </div>
+                        
+                        <div class="icon">
+                            <span class="material-symbols-outlined">
+                                water_drop
+                            </span>
+                            <!--
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+
+                            <div class="percentage">
+                                <p>+21%</p>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div></div>
+
+                <div class="lux">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Radiação luminosa</h3>
+                            <button class="analyse_btn" id="lux-btn" onclick="plotLuxChart()">
+                                <span class="material-symbols-outlined">
+                                    monitoring
+                                </span>
+                            </button>
+                        </div>
+                        
+                        <div class="icon">
+                            <span class="material-symbols-outlined">
+                                brightness_6
+                            </span>
+                            <!--
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+
+                            <div class="percentage">
+                                <p>+21%</p>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                </div>
+
+                <div></div>
+            </div>
+
+            <!-- Exibição de Dados -->
+            <div class="data-section">
+                <h2>Gráfico</h2>
+                <div>
+                    <!-- Campo de seleção de quantidade de dados -->
+                    <label>Quantidade de Dados:</label>
+                    <input type="number" class="data-quantity_label" id="data-quantity" value="100" autofocus>
+                </div>
+
+                <div class="data-infos">
+                    <div id="data-info_1"></div>
+                </div>
+            </div>
+            <!-- Tabela de Pedidos Recentes -->
+            <div class="recent-orders">
+                <h2>Dados históricos com alertas de anomalias</h2>
+                <div id="data-quantity2_section">
+                    <div>
+                        <!-- Campo de seleção de quantidade de dados -->
+                        <label>Quantidade de Dados:</label>
+                        <input type="number" class="data-quantity_label" id="data-quantity2" value="100" />
+                    </div>
+    
+                    <!-- Botão para gerar o gráfico com todos os dados -->
+                    <button id="all-data-btn" onclick="plotAllCharts()">
+                        <span class="material-symbols-outlined">
+                            analytics
+                        </span>
+                    </button>
+                </div>
+
+                <div class="data-infos">
+                    <div id="data-info_2"></div>
+                </div>
+                <!--
+                <a href="#">Mostrar Todos</a>
+                -->
+            </div>
+        </main>
+
+        <!-- Seção da Direita -->
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-symbols-outlined">
+                        <b>menu</b>
+                    </span>
+                </button>
+
+                <div class="dark-mode">
+                    <span class="material-symbols-outlined active">
+                        light_mode
+                    </span>
+                    <span class="material-symbols-outlined">
+                        dark_mode
+                    </span>
+                </div>
+
+                <div class="profile">
+                    <div class="info">
+                        <p>Olá, <b>Rafael</b></p>
+                        <p style="font-size: 15px;" class="text-muted">Admin</p>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="images/Rafael.png">
+                    </div>
+                </div>
+            </div>
+
+            <div class="user-profile">
+                <div class="logo">
+                    <img src="images/RAINCAT_SEMFUNDO.png">
+                    <p style="font-size: 18px; font-family: 'Montserrat', sans-serif; font-weight: bold">A system to avoid getting wet!</p>
+                    <!--
+                    <h2>LINCE</h2>
+                    <p>Liga De Inteligência Neuro-Computacional Na Engenharia</p>
+                    -->
+                </div>
+            </div>
+
+            <div class="reminders">
+                <div class="header">
+                    <h2>Alertas</h2>
+                    <span class="material-symbols-outlined">
+                        notifications
+                    </span>
+                </div>
+
+                <div class="notification">
+                    <div class="icon">
+                        <span class="material-symbols-outlined">
+                            warning
+                        </span>
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>Timestamp</h3>
+                            <p style="font-size: 10px;" class="text_muted">
+                                2019-01-03 18:00:00
+                            </p>
+                        </div>
+                        <span class="material-symbols-outlined">
+                            <b>more_vert</b>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="notification deactive">
+                    <div class="icon">
+                        <span class="material-symbols-outlined">
+                            warning
+                        </span>
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>Timestamp</h3>
+                            <p style="font-size: 10px;" class="text_muted">
+                                2019-01-04 19:00:00
+                            </p>
+                        </div>
+                        <span class="material-symbols-outlined">
+                            <b>more_vert</b>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="notification add-reminder">
+                    <div>
+                        <span class="material-symbols-outlined">
+                            <b>add</b>
+                        </span>
+                        <h3>Todos os alertas</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Arquivo .js usado para algumas operações de botões -->
+    <script src="01_index.js"></script>
+
+    <!-- Link do Chart.js usando um CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Plugin "Annotation" para Chart.js usando um CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.0.0"></script>
+
+    <!-- Arquivos JavaScript para coleta de dados -->
+    <script type="module" src="firebase.js"></script>
+    <script type="module" src="fetchData.js"></script>
+    <script type="module" src="plotChart.js"></script>
+    <script type="module" src="fetchData_anomalous.js"></script>
+    <script type="module" src="plotChart_anomalous.js"></script>
+</body>
+</html>
