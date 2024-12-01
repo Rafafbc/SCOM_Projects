@@ -149,19 +149,14 @@ aside .toggle h2 {
 
 aside .toggle .logo {
     display: flex;
-    flex-direction: column;
     align-items: center;
     display: flex;
     gap: 8px;
 }
 
-aside .toggle .logo #LINCE-logo {
-    width: 80%;
-    height: 80%;
-}
-aside .toggle .logo #LINCE-name {
-    width: 95%;
-    height: 95%;
+aside .toggle .logo img {
+    width: 74px;
+    height: 74px;
 }
 
 aside .toggle .close {
@@ -281,71 +276,12 @@ main {
     margin-top: 22.4px;
 }
 
-main #data-collection {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0px 10px 0px 0px;
-}
-
-#fetch-Data {
-    align-items: center;
-    appearance: none;
-    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
-    border: 0;
-    border-radius: var(--border-radius1);
-    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
-    box-sizing: border-box;
-    color: var(--color-text);
-    cursor: pointer;
-    display: inline-flex;
-    font-family: "JetBrains Mono",monospace;
-    height: 48px;
-    justify-content: center;
-    line-height: 1;
-    list-style: none;
-    overflow: hidden;
-    padding-left: 16px;
-    padding-right: 16px;
-    position: relative;
-    text-align: left;
-    text-decoration: none;
-    transition: box-shadow .15s,transform .15s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    will-change: box-shadow,transform;
-    font-size: 18px;
-    font-weight: 700;
-}
-
-#fetch-Data:focus {
-    box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-}
-
-#fetch-Data:hover {
-    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-    transform: translateY(-2px);
-}
-
-#fetch-Data:active {
-    box-shadow: #3c4fe0 0 3px 7px inset;
-    transform: translateY(2px);
-}
-
 /* Estilização das Análises */
 main .analyse {
-    display: grid;      /*Retornar para 'none' depois*/
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
-/*
-main .data-section{
-    display: none;
-}
-*/
 /*
 @media (max-width: 1200px) {
     main .analyse {
@@ -487,12 +423,12 @@ main .analyse .icon .percentage {
     width: 100%;
 }
 
-/* Estilização da Exibição de Dados */
-main .data-section {
+/* Estilização dos Novos Usuários */
+main .new-users {
     margin-top: 20.8px;
 }
 
-main .data-section .data-infos {
+main .new-users .user-list {
     background-color: var(--color-background2);
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
@@ -506,68 +442,26 @@ main .data-section .data-infos {
     flex-wrap: wrap;
     gap: 22.4px;
 }
-main .data-section .data-infos:hover {
+main .new-users .user-list:hover {
     box-shadow: none;
 }
+/* Verificar depois se retira */ 
+main .new-users .user-list > div {
+    display: none;
+}
 
-main .data-section .user {
+main .new-users .user {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-main .data-section > div .data-quantity_label {
-    width: 80px; /* Control the size of the input */
-    padding: 3px;
-    font-size: 15px; /* Make it readable */
-    border: 1px solid #ccc; /* Standard border */
-    border-radius: 4px; /* Optional: rounded corners */
-    box-sizing: border-box; /* Ensure padding doesn't affect size */
-    outline: none; /* Remove default focus outline */
-}
-main .data-section > div .data-quantity_label:focus {
-    border-color: #007bff; /* Highlight border when focused */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add glow effect */
-}
-
-main .recent-orders #data-quantity2_section {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-main .recent-orders #data-quantity2_section > button {
-    width: 50px;
-    height: 50px;
-    text-align: center;
-}
-
-main .recent-orders > div .data-quantity_label {
-    width: 80px; /* Control the size of the input */
-    padding: 3px;
-    font-size: 15px; /* Make it readable */
-    border: 1px solid #ccc; /* Standard border */
-    border-radius: 4px; /* Optional: rounded corners */
-    box-sizing: border-box; /* Ensure padding doesn't affect size */
-    outline: none; /* Remove default focus outline */
-}
-main .recent-orders > div .data-quantity_label:focus {
-    border-color: #007bff; /* Highlight border when focused */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add glow effect */
-}
-
-main .recent-orders #all-data-btn {
-    background-color: transparent;
-    border: solid var(--color-text);
-    border-radius: var(--border-radius2);
-    cursor: pointer;
-    position: relative;
-    left: 10px;
-    bottom: 2px;
-}
-main .recent-orders #all-data-btn span {
-    color: var(--color-text);
-    font-size: 40px;
+main .new-users .user-list .user img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 6.4px;
+    border-radius: 50%;
 }
 
 /* Estilização da Tabela de Pedidos Recentes */
@@ -579,25 +473,6 @@ main .recent-orders h2 {
     margin-bottom: 12.8px;
 }
 
-main .recent-orders .data-infos {
-    background-color: var(--color-background2);
-    padding: var(--card-padding);
-    border-radius: var(--card-border-radius);
-    margin-top: 16px;
-    box-shadow: var(--box-shadow);
-    cursor: pointer;
-    transition: all 0.3s ease;
-
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 22.4px;
-}
-main .recent-orders .data-infos:hover {
-    box-shadow: none;
-}
-
-/*
 main .recent-orders table {
     background-color: var(--color-background2);
     width: 100%;
@@ -610,7 +485,6 @@ main .recent-orders table {
 main .recent-orders table:hover {
     box-shadow: none;
 }
-*/
 
 /*
 main table th {
@@ -702,10 +576,9 @@ main .recent-orders a {
     justify-content: center;
     text-align: center;
     margin-top: 16px;
-    background-color: var(--color-info);
+    background-color: var(--color-background2);
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
-    border: 5px solid var(--color-background2);
     box-shadow: var(--box-shadow);
     cursor: pointer;
     transition: all 0.3s ease;
@@ -718,10 +591,6 @@ main .recent-orders a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-}
-.right-section .user-profile .logo p {
-    color: var(--color-background2);
 }
 
 .right-section .user-profile img {
@@ -783,7 +652,7 @@ main .recent-orders a {
 
 .right-section .reminders .notification .icon {
     padding: 9.6px;
-    color: var(--color-text);
+    color: var(--color-background2);
     background-color: var(--color-success);
     border-radius: 20%;
     display: flex;
@@ -841,6 +710,10 @@ main .recent-orders a {
     main .analyse {
         grid-template-columns: 1fr;
         gap: 0;
+    }
+    
+    main .new-users .user-list .user {
+        flex-basis: 40%;
     }
 
     main .recent-orders {
@@ -936,42 +809,9 @@ main .recent-orders a {
         padding: 0 16px;
     }
 
-    /* Estilização da Exibição de Dados */
-    /*
-    main .data-section {
-        margin-top: 20.8px;
+    main .new-users .user-list .user {
+        flex-basis: 45%;
     }
-
-    main .data-section .data-infos {
-        background-color: var(--color-background2);
-        padding: var(--card-padding);
-        border-radius: var(--card-border-radius);
-        margin-top: 16px;
-        box-shadow: var(--box-shadow);
-        cursor: pointer;
-        transition: all 0.3s ease;
-
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        gap: 22.4px;
-    }
-    main .data-section .data-infos:hover {
-        box-shadow: none;
-    }
-
-    main .data-section #data-info_1{
-        width: 650px; /* Garante que os elementos ocupem 100% da largura do contêiner 
-        max-width: 100%; /* Evita que ultrapassem os limites 
-        max-height: 100%;
-    }
-
-    main .recent-orders #data-info_2{
-        width: 650px; /* Garante que os elementos ocupem 100% da largura do contêiner 
-        max-width: 100%; /* Evita que ultrapassem os limites 
-        max-height: 100%;
-    }
-    */
 
     main .recent-orders {
         position: relative;

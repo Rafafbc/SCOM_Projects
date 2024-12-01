@@ -105,7 +105,7 @@ function fetchData() {
 
 // Função para obter os dados
 function getDataArrays() {
-    console.log("DADOS ACESSADOS!")
+    console.log("DADOS COLETADOS")
     return {
         pressoes,
         luxs,

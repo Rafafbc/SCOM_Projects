@@ -428,6 +428,11 @@ function handleDataQuantitySelection() {
 
 // Exemplo de como integrar com a interface de usuário (HTML)
 document.addEventListener("DOMContentLoaded", () => {
+    fetchData()
+        .then(() => {
+            getDataArrays();
+        });
+
     // Adiciona um ouvinte para o evento de mudança no campo de quantidade de dados
     document.getElementById('data-quantity').addEventListener('change', handleDataQuantitySelection);
 });

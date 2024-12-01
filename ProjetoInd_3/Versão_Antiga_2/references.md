@@ -6,8 +6,6 @@
 - **Ícones no HTML:** <https://www.devmedia.com.br/html-icons-utilizando-icones-em-paginas-html/43517>
 
 # Fontes Auxiliares
-- **Beautiful CSS buttons examples:** <https://getcssscan.com/css-buttons-examples> by Michael McMillan
-- **Beautiful CSS buttons examples:** <https://getcssscan.com/css-buttons-examples> by Algolia
 - **Toggle Class:** <https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp>
 - **How To Create a Toggle Switch:** <https://www.w3schools.com/howto/howto_css_switch.asp>
 

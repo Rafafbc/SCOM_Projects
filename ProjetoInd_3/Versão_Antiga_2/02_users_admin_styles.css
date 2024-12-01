@@ -149,19 +149,14 @@ aside .toggle h2 {
 
 aside .toggle .logo {
     display: flex;
-    flex-direction: column;
     align-items: center;
     display: flex;
     gap: 8px;
 }
 
-aside .toggle .logo #LINCE-logo {
-    width: 80%;
-    height: 80%;
-}
-aside .toggle .logo #LINCE-name {
-    width: 95%;
-    height: 95%;
+aside .toggle .logo img {
+    width: 74px;
+    height: 74px;
 }
 
 aside .toggle .close {
@@ -281,71 +276,12 @@ main {
     margin-top: 22.4px;
 }
 
-main #data-collection {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0px 10px 0px 0px;
-}
-
-#fetch-Data {
-    align-items: center;
-    appearance: none;
-    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
-    border: 0;
-    border-radius: var(--border-radius1);
-    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
-    box-sizing: border-box;
-    color: var(--color-text);
-    cursor: pointer;
-    display: inline-flex;
-    font-family: "JetBrains Mono",monospace;
-    height: 48px;
-    justify-content: center;
-    line-height: 1;
-    list-style: none;
-    overflow: hidden;
-    padding-left: 16px;
-    padding-right: 16px;
-    position: relative;
-    text-align: left;
-    text-decoration: none;
-    transition: box-shadow .15s,transform .15s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    will-change: box-shadow,transform;
-    font-size: 18px;
-    font-weight: 700;
-}
-
-#fetch-Data:focus {
-    box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-}
-
-#fetch-Data:hover {
-    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-    transform: translateY(-2px);
-}
-
-#fetch-Data:active {
-    box-shadow: #3c4fe0 0 3px 7px inset;
-    transform: translateY(2px);
-}
-
 /* Estilização das Análises */
 main .analyse {
-    display: grid;      /*Retornar para 'none' depois*/
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
-/*
-main .data-section{
-    display: none;
-}
-*/
 /*
 @media (max-width: 1200px) {
     main .analyse {
@@ -487,12 +423,12 @@ main .analyse .icon .percentage {
     width: 100%;
 }
 
-/* Estilização da Exibição de Dados */
-main .data-section {
+/* Estilização dos Novos Usuários */
+main .new-users {
     margin-top: 20.8px;
 }
 
-main .data-section .data-infos {
+main .new-users .user-list {
     background-color: var(--color-background2);
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
@@ -506,118 +442,76 @@ main .data-section .data-infos {
     flex-wrap: wrap;
     gap: 22.4px;
 }
-main .data-section .data-infos:hover {
+main .new-users .user-list:hover {
     box-shadow: none;
 }
-
-main .data-section .user {
+/* Verificar depois se retira 
+main .new-users .user-list > div {
+    display: none;
+}
+*/
+main .new-users .user {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-main .data-section > div .data-quantity_label {
-    width: 80px; /* Control the size of the input */
-    padding: 3px;
-    font-size: 15px; /* Make it readable */
-    border: 1px solid #ccc; /* Standard border */
-    border-radius: 4px; /* Optional: rounded corners */
-    box-sizing: border-box; /* Ensure padding doesn't affect size */
-    outline: none; /* Remove default focus outline */
-}
-main .data-section > div .data-quantity_label:focus {
-    border-color: #007bff; /* Highlight border when focused */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add glow effect */
+main .new-users .user-list .user img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 6.4px;
+    border-radius: 50%;
 }
 
-main .recent-orders #data-quantity2_section {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-main .recent-orders #data-quantity2_section > button {
-    width: 50px;
-    height: 50px;
-    text-align: center;
-}
-
-main .recent-orders > div .data-quantity_label {
-    width: 80px; /* Control the size of the input */
-    padding: 3px;
-    font-size: 15px; /* Make it readable */
-    border: 1px solid #ccc; /* Standard border */
-    border-radius: 4px; /* Optional: rounded corners */
-    box-sizing: border-box; /* Ensure padding doesn't affect size */
-    outline: none; /* Remove default focus outline */
-}
-main .recent-orders > div .data-quantity_label:focus {
-    border-color: #007bff; /* Highlight border when focused */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add glow effect */
-}
-
-main .recent-orders #all-data-btn {
-    background-color: transparent;
-    border: solid var(--color-text);
-    border-radius: var(--border-radius2);
+main .new-users .user-list .user .btn-detalhes_usuario {
+    font-family: "Open Sans", sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
     cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
     position: relative;
-    left: 10px;
-    bottom: 2px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
 }
-main .recent-orders #all-data-btn span {
-    color: var(--color-text);
-    font-size: 40px;
+main .new-users .user-list .user .btn-detalhes_usuario:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
 }
 
-/* Estilização da Tabela de Pedidos Recentes */
-main .recent-orders {
+/* Estilização da Tabela de Detalhes de Usuário */
+main .users-details {
     margin-top: 20.8px;
 }
 
-main .recent-orders h2 {
+main .users-details h2 {
     margin-bottom: 12.8px;
 }
 
-main .recent-orders .data-infos {
-    background-color: var(--color-background2);
-    padding: var(--card-padding);
-    border-radius: var(--card-border-radius);
-    margin-top: 16px;
-    box-shadow: var(--box-shadow);
-    cursor: pointer;
-    transition: all 0.3s ease;
-
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 22.4px;
-}
-main .recent-orders .data-infos:hover {
-    box-shadow: none;
-}
-
-/*
-main .recent-orders table {
+main .users-details table {
     background-color: var(--color-background2);
     width: 100%;
     padding: var(--card-padding);
     text-align: center;
     box-shadow: var(--box-shadow);
-    border-radius: var(--card-border-radius);
     transition: all 0.3s ease;
 }
-main .recent-orders table:hover {
+main .users-details table:hover {
     box-shadow: none;
 }
-*/
 
 /*
 main table th {
     display: none;
 }
-*/
-/*
+
 main table tbody td{
     display: none;
     height: 44.8px;
@@ -626,11 +520,57 @@ main table tbody td{
 }
 */
 
+.users-details #detalhes > div{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 16% 84%;
+}
+
+.users-details #detalhes div img {
+    padding: 0px;
+    margin: 0px;
+    height: 100px;
+    width: 100px;
+    position: relative;
+    border: 3px solid black;
+    border-radius: 5px;
+    margin-bottom: 0.5px;
+}
+
+.users-details #detalhes table {
+    border-collapse: collapse;
+    width: 100%;
+    border-right: 1px solid var(--color-info);
+    border-left: 1px solid var(--color-info);
+    border-top: 2px solid var(--color-info);
+    border-bottom: 2px solid var(--color-info);
+}
+/* Fundo para linhas ímpares */
+.users-details #detalhes tr:nth-child(odd) {
+    background-color: var(--color-background);
+}
+/* Fundo para linhas pares */
+.users-details #detalhes tr:nth-child(even) {
+    background-color: transparent;
+}
+
+.users-details #detalhes td:first-child{
+    font-weight: bold;
+    text-align: left;
+    vertical-align: middle;
+    width: 50%;
+}
+.users-details #detalhes td:last-child{
+    text-align: left;
+    vertical-align: middle;
+    width: 50%;
+}
+
 main table tbody tr:last-child td {
     border: none;
 }
 
-main .recent-orders a {
+main .users-details a {
     text-align: center;
     display: block;
     margin: 16px auto;
@@ -702,10 +642,9 @@ main .recent-orders a {
     justify-content: center;
     text-align: center;
     margin-top: 16px;
-    background-color: var(--color-info);
+    background-color: var(--color-background2);
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
-    border: 5px solid var(--color-background2);
     box-shadow: var(--box-shadow);
     cursor: pointer;
     transition: all 0.3s ease;
@@ -718,10 +657,6 @@ main .recent-orders a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-}
-.right-section .user-profile .logo p {
-    color: var(--color-background2);
 }
 
 .right-section .user-profile img {
@@ -783,7 +718,7 @@ main .recent-orders a {
 
 .right-section .reminders .notification .icon {
     padding: 9.6px;
-    color: var(--color-text);
+    color: var(--color-background2);
     background-color: var(--color-success);
     border-radius: 20%;
     display: flex;
@@ -842,8 +777,12 @@ main .recent-orders a {
         grid-template-columns: 1fr;
         gap: 0;
     }
+    
+    main .new-users .user-list .user {
+        flex-basis: 40%;
+    }
 
-    main .recent-orders {
+    main .users-details {
         width: 94%;
         position: absolute;
         left: 50%;
@@ -851,13 +790,13 @@ main .recent-orders a {
         margin: 32px 0 0 12.8px;
     }
 
-    main .recent-orders table {
+    main .users-details table {
         width: 83vw;
     }
-    main .recent-orders table tbody tr td:last-child, main .recent-orders table tbody tr td:first-child{
+    main .users-details table tbody tr td:last-child, main .users-details table tbody tr td:first-child{
         display: none;
     }
-    main .recent-orders table thead tr th:last-child, main .recent-orders table thead tr th:first-child{
+    main .users-details table thead tr th:last-child, main .users-details table thead tr th:first-child{
         display: none;
     }
 
@@ -936,50 +875,17 @@ main .recent-orders a {
         padding: 0 16px;
     }
 
-    /* Estilização da Exibição de Dados */
-    /*
-    main .data-section {
-        margin-top: 20.8px;
+    main .new-users .user-list .user {
+        flex-basis: 45%;
     }
 
-    main .data-section .data-infos {
-        background-color: var(--color-background2);
-        padding: var(--card-padding);
-        border-radius: var(--card-border-radius);
-        margin-top: 16px;
-        box-shadow: var(--box-shadow);
-        cursor: pointer;
-        transition: all 0.3s ease;
-
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        gap: 22.4px;
-    }
-    main .data-section .data-infos:hover {
-        box-shadow: none;
-    }
-
-    main .data-section #data-info_1{
-        width: 650px; /* Garante que os elementos ocupem 100% da largura do contêiner 
-        max-width: 100%; /* Evita que ultrapassem os limites 
-        max-height: 100%;
-    }
-
-    main .recent-orders #data-info_2{
-        width: 650px; /* Garante que os elementos ocupem 100% da largura do contêiner 
-        max-width: 100%; /* Evita que ultrapassem os limites 
-        max-height: 100%;
-    }
-    */
-
-    main .recent-orders {
+    main .users-details {
         position: relative;
         margin: 48px 0 0 0;
         width: 100%;
     }
 
-    main .recent-orders table {
+    main .users-details table {
         width: 100%;
         margin: 0;
     }

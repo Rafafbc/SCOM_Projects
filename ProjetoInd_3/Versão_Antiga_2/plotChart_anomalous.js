@@ -34,11 +34,11 @@ function plotAllCharts(quantity = 100) {
 
     // Recupera os dados completos
     const data = getAnomalousDataArrays();
-    console.log("Dados totais para anomalia: ", data);
+    console.log("Dados totais: ", data);
 
     // Filtra os dados com base na quantidade selecionada
     const filteredData = filterDataByQuantity(data, quantity);
-    console.log("Dados filtrados para anomalia: ", filteredData);
+    console.log("Dados filtrados: ", filteredData);
 
     // Define o contexto 2D do novo canvas
     const ctx = plotedChart.getContext('2d');
@@ -194,6 +194,11 @@ function handleAnomalousDataQuantitySelection() {
 
 // Exemplo de como integrar com a interface de usuário (HTML)
 document.addEventListener("DOMContentLoaded", () => {
+    fetchAnomalousData()
+        .then(() => {
+            getAnomalousDataArrays();
+        });
+
     // Adiciona um ouvinte para o evento de mudança no campo de quantidade de dados
     document.getElementById('data-quantity2').addEventListener('change', handleAnomalousDataQuantitySelection);
 });

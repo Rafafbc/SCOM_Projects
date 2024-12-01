@@ -5,187 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Link de referência usado para acessar e inserir Icones do Google Fonts à página HTML-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="index_styles.css">
-    <title>Rain Cat - Dashboard</title>
-    <style>
-        /*
-        /* Seção da Sidebar 
-        body {
-            border-style: dashed;
-            border-color:rgb(0, 0, 0);
-            border-width: 2px;
-        }
 
-        body .container-1 {
-            border-style: dashed;
-            border-color:rgb(255, 0, 0);
-            border-width: 2px;
-        }
+    <!-- Estilização da Página -->
+    <link rel="stylesheet" href="04_analyse.css">
 
-        aside {
-            border-style: dashed;
-            border-color:rgb(165, 146, 4);
-            border-width: 2px;
-        }
-        
-        aside .toggle{
-            border-style: dashed;
-            border-color:rgb(27, 207, 7);
-            border-width: 2px;
-        }
+    <!-- Firebase App -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js"></script>
 
-        aside .toggle .logo{
-            border-style: dashed;
-            border-color:rgb(0, 4, 255);
-            border-width: 2px;
-        }
-
-        aside .toggle .close{
-            border-style: dashed;
-            border-color:rgb(0, 4, 255);
-            border-width: 2px;
-        }
-
-        .sidebar {
-            border-style: dashed;
-            border-color:rgb(2, 107, 123);
-            border-width: 2px;
-        }
-
-        .sidebar a {
-            border-style: dashed; 
-            border-color:rgb(123, 2, 2); 
-            border-width: 2px;
-        }
-
-        /* Seção do Conteúdo Principal 
-        main {
-            border-style: dashed;
-            border-color:rgb(165, 146, 4);
-            border-width: 2px;
-        }
-        
-        main h1{
-            border-style: dashed;
-            border-color:rgb(27, 207, 7);
-            border-width: 2px;
-        }
-
-        main h2{
-            border-style: dashed;
-            border-color:rgb(27, 207, 7);
-            border-width: 2px;
-        }
-
-        /* Análises 
-        main .analyse{
-            border-style: dashed;
-            border-color:rgb(0, 4, 255);
-            border-width: 2px;
-        }
-
-        main .analyse > div {
-            border-style: dashed;
-            border-color:rgb(123, 115, 2);
-            border-width: 2px;
-        }
-
-        main .analyse > div .status{
-            border-style: dashed; 
-            border-color:rgb(123, 2, 2); 
-            border-width: 2px;
-        }
-        
-        /*
-        main .analyse .progress svg{
-            border-style: dashed; 
-            border-color:rgb(49, 175, 10); 
-            border-width: 2px;
-        }
-
-        main .analyse .progress .percentage{
-            border-style: dashed; 
-            border-color:rgb(0, 0, 0); 
-            border-width: 2px;
-        }
-        
-        main .analyse span{
-            border-style: dashed; 
-            border-color:rgb(49, 175, 10); 
-            border-width: 2px;
-        }
-
-        main .analyse span .material-symbols-outlined {
-            border-style: dashed; 
-            border-color:rgb(0, 0, 0); 
-            border-width: 2px;
-        }
-
-        /* Novos Usuários 
-        main .new-users{
-            border-style: dashed;
-            border-color:rgb(0, 4, 255);
-            border-width: 2px;
-        }
-
-        main .new-users > div {
-            border-style: dashed;
-            border-color:rgb(123, 2, 68);
-            border-width: 2px;
-        }
-
-        main .new-users .user{
-            border-style: dashed; 
-            border-color:rgb(2, 89, 123); 
-            border-width: 2px;
-        }
-
-        /* Seção da Direita 
-        div .right-section {
-            border-style: dashed;
-            border-color:rgb(165, 146, 4);
-            border-width: 2px;
-        }
-        
-        div .nav{
-            border-style: dashed;
-            border-color:rgb(27, 207, 7);
-            border-width: 2px;
-        }
-
-        div .nav .menu-btn{
-            border-style: dashed;
-            border-color:rgb(207, 7, 7);
-            border-width: 2px;
-        }
-        div .nav .dark-mode{
-            border-style: dashed;
-            border-color:rgb(34, 145, 15);
-            border-width: 20px;
-        }
-
-        div .nav .profile{
-            border-style: dashed;
-            border-color:rgb(7, 24, 207);
-            border-width: 2px;
-        }
-        div .user-profile {
-            border-style: dashed;
-            border-color:rgb(165, 146, 4);
-            border-width: 2px;
-        }
-        div .user-profile .logo {
-            border-style: dashed;
-            border-color:rgb(7, 165, 4);
-            border-width: 2px;
-        }
-        div .user-profile img{
-            border-style: dashed;
-            border-color:rgb(20, 4, 165);
-            border-width: 2px;
-        }
-        */
-    </style>
+    <title>ESC - Dashboard</title>
 </head>
 <body>
     <div class="container-1">
@@ -206,7 +34,7 @@
             </div>
 
             <div class="sidebar">
-                <a href="#" class="active">
+                <a href="index.html">
                     <span class="material-symbols-outlined">
                         info
                     </span>
@@ -227,7 +55,7 @@
                     <h3>Histórico</h3>
                 </a>
                 
-                <a href="04_analyse.html">
+                <a href="#" class="active">
                     <span class="material-symbols-outlined">
                         query_stats
                     </span>
@@ -244,14 +72,12 @@
                 </a>
                 -->
 
-                <!--
                 <a href="#">
                     <span class="material-symbols-outlined">
                         inventory
                     </span>
                     <h3>Inventário</h3>
                 </a>
-                -->
 
                 <a href="#">
                     <span class="material-symbols-outlined">
@@ -260,14 +86,12 @@
                     <h3>Alertas</h3>
                 </a>
 
-                <!--
                 <a href="#">
                     <span class="material-symbols-outlined">
                         settings
                     </span>
                     <h3>Configurações</h3>
                 </a>
-                -->
 
                 <a href="#">
                     <span class="material-symbols-outlined">
@@ -287,17 +111,15 @@
 
         <!-- Seção do Conteúdo Principal -->
         <main>
-            <h1>LINCE</h1>
-            <!-- Informações sobre a LINCE -->
-            <h2>| Liga de Inteligência Neuro-Computacional na Engenharia</h2>
-            <div class="LINCE-info"></div>
+            <h1>Análise dos dados</h1>
+            <!-- Análises -->
             <div class="analyse">
                 <div class="pressure">
                     <div class="status">
                         <div class="info">
-                            <h3>Pressão do ar</h3>
+                            <h3>Pressão atmosférica</h3>
                             <!--<h1>$65,240</h1>-->
-                            <button class="analyse_btn">
+                            <button class="analyse_btn" id="press-btn" onclick="plotPressChart()">
                                 <span class="material-symbols-outlined">
                                     monitoring
                                 </span>
@@ -324,8 +146,8 @@
                 <div class="temp">
                     <div class="status">
                         <div class="info">
-                            <h3>Temperatura</h3>
-                            <button class="analyse_btn">
+                            <h3>Temperatura do ar</h3>
+                            <button class="analyse_btn" id="temp-btn" onclick="plotTempChart()">
                                 <span class="material-symbols-outlined">
                                     monitoring
                                 </span>
@@ -352,8 +174,8 @@
                 <div class="humidity">
                     <div class="status">
                         <div class="info">
-                            <h3>Umidade</h3>
-                            <button class="analyse_btn">
+                            <h3>Umidade relativa</h3>
+                            <button class="analyse_btn" id="humid-btn" onclick="plotHumidChart()">
                                 <span class="material-symbols-outlined">
                                     monitoring
                                 </span>
@@ -382,8 +204,8 @@
                 <div class="lux">
                     <div class="status">
                         <div class="info">
-                            <h3>Intensidade Luminosa</h3>
-                            <button class="analyse_btn">
+                            <h3>Radiação luminosa</h3>
+                            <button class="analyse_btn" id="lux-btn" onclick="plotLuxChart()">
                                 <span class="material-symbols-outlined">
                                     monitoring
                                 </span>
@@ -410,34 +232,43 @@
                 <div></div>
             </div>
 
-            <!-- Informações sobre o projeto Rain Cat -->
-            <div class="new-users">
-            <h1>Rain Cat</h1>
-            <div class="user-list">
-                <div class="user">
-                    <img src="images/profile-2.jpg">
-                    <h2>Jack</h2>
-                    <p>54 Min Ago</p>
+            <!-- Exibição de Dados -->
+            <div class="data-section">
+                <h2>Gráfico</h2>
+                <div>
+                    <!-- Campo de seleção de quantidade de dados -->
+                    <label>Quantidade de Dados:</label>
+                    <input type="number" class="data-quantity_label" id="data-quantity" value="100" autofocus>
                 </div>
 
-                <div class="user">
-                    <img src="images/profile-3.jpg">
-                    <h2>Amir</h2>
-                    <p>3 Hours Ago</p>
-                </div>
-
-                <div class="user">
-                    <img src="images/profile-4.jpg">
-                    <h2>Ember</h2>
-                    <p>6 Hours Ago</p>
-                </div>
-
-                <div class="user">
-                    <img src="images/plus.png">
-                    <h2>More</h2>
-                    <p>New User</p>
+                <div class="data-infos">
+                    <div id="data-info_1"></div>
                 </div>
             </div>
+            <!-- Tabela de Pedidos Recentes -->
+            <div class="recent-orders">
+                <h2>Dados históricos com alertas de anomalias</h2>
+                <div id="data-quantity2_section">
+                    <div>
+                        <!-- Campo de seleção de quantidade de dados -->
+                        <label>Quantidade de Dados:</label>
+                        <input type="number" class="data-quantity_label" id="data-quantity2" value="100" />
+                    </div>
+    
+                    <!-- Botão para gerar o gráfico com todos os dados -->
+                    <button id="all-data-btn" onclick="plotAllCharts()">
+                        <span class="material-symbols-outlined">
+                            analytics
+                        </span>
+                    </button>
+                </div>
+
+                <div class="data-infos">
+                    <div id="data-info_2"></div>
+                </div>
+                <!--
+                <a href="#">Mostrar Todos</a>
+                -->
             </div>
         </main>
 
@@ -474,12 +305,16 @@
                 <div class="logo">
                     <img src="images/RAINCAT_SEMFUNDO.png">
                     <p style="font-size: 18px; font-family: 'Montserrat', sans-serif; font-weight: bold">A system to avoid getting wet!</p>
+                    <!--
+                    <h2>LINCE</h2>
+                    <p>Liga De Inteligência Neuro-Computacional Na Engenharia</p>
+                    -->
                 </div>
             </div>
 
             <div class="reminders">
                 <div class="header">
-                    <h2>Reminders</h2>
+                    <h2>Alertas</h2>
                     <span class="material-symbols-outlined">
                         notifications
                     </span>
@@ -488,15 +323,15 @@
                 <div class="notification">
                     <div class="icon">
                         <span class="material-symbols-outlined">
-                            volume_up
+                            warning
                         </span>
                     </div>
                     <div class="content">
                         <div class="info">
-                            <h3>Workshop</h3>
-                            <small class="text_muted">
-                                08:00 AM - 12:00 PM
-                            </small>
+                            <h3>Timestamp</h3>
+                            <p style="font-size: 10px;" class="text_muted">
+                                2019-01-03 18:00:00
+                            </p>
                         </div>
                         <span class="material-symbols-outlined">
                             <b>more_vert</b>
@@ -507,15 +342,15 @@
                 <div class="notification deactive">
                     <div class="icon">
                         <span class="material-symbols-outlined">
-                            edit
+                            warning
                         </span>
                     </div>
                     <div class="content">
                         <div class="info">
-                            <h3>Workshop</h3>
-                            <small class="text_muted">
-                                08:00 AM - 12:00 PM
-                            </small>
+                            <h3>Timestamp</h3>
+                            <p style="font-size: 10px;" class="text_muted">
+                                2019-01-04 19:00:00
+                            </p>
                         </div>
                         <span class="material-symbols-outlined">
                             <b>more_vert</b>
@@ -528,7 +363,7 @@
                         <span class="material-symbols-outlined">
                             <b>add</b>
                         </span>
-                        <h3>Add Reminders</h3>
+                        <h3>Todos os alertas</h3>
                     </div>
                 </div>
             </div>
@@ -539,7 +374,16 @@
     <!-- Arquivo .js usado para algumas operações de botões -->
     <script src="01_index.js"></script>
 
-    <script type="module" src="orders.js"></script>
-    <script type="module" src="table.js"></script>
+    <!-- Link do Chart.js usando um CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Plugin "Annotation" para Chart.js usando um CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.0.0"></script>
+
+    <!-- Arquivos JavaScript para coleta de dados -->
+    <script type="module" src="firebase.js"></script>
+    <script type="module" src="fetchData.js"></script>
+    <script type="module" src="plotChart.js"></script>
+    <script type="module" src="fetchData_anomalous.js"></script>
+    <script type="module" src="plotChart_anomalous.js"></script>
 </body>
 </html>

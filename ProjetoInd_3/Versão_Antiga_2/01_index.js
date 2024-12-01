@@ -6,7 +6,6 @@ const sideMenu = document.querySelector('aside');
 // Seleção das ID relacionadas aos botões
 const menuBtn = document.getElementById('menu-btn');    // Botão para abrir o sidebar no modo mobile
 const closeBtn = document.getElementById('close-btn');  // Botão para fechar o sidebar
-const dataBtn = document.getElementById('fetch-Data');  // Botão para coletar os dados no database
 
 // Seleciona e armazena a classe 'dark-mode' em uma variável
 const darkMode = document.querySelector('.dark-mode');
@@ -23,21 +22,6 @@ menuBtn.addEventListener('click', () => {
 // Quando clicado, o menu lateral (sideMenu) é ocultado, definindo o estilo 'display' como 'none'.
 closeBtn.addEventListener('click', () => {
     sideMenu.style.display = 'none';
-});
-
-// Adiciona um evento de clique ao botão de coletar dados (dataBtn)
-dataBtn.addEventListener('click', () => {
-    // Coleta de dados das variáveis
-    fetchData()
-        .then(() => {
-            getDataArrays();
-        });
-    
-    // Coleta de dados das variáveis com os alertas de anomalia
-    fetchAnomalousData()
-        .then(() => {
-            getAnomalousDataArrays();
-        });
 });
 
 // Adiciona um evento de clique ao elemento de modo escuro (darkMode).
