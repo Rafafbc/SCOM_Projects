@@ -149,14 +149,19 @@ aside .toggle h2 {
 
 aside .toggle .logo {
     display: flex;
+    flex-direction: column;
     align-items: center;
     display: flex;
     gap: 8px;
 }
 
-aside .toggle .logo img {
-    width: 74px;
-    height: 74px;
+aside .toggle .logo #LINCE-logo {
+    width: 80%;
+    height: 80%;
+}
+aside .toggle .logo #LINCE-name {
+    width: 95%;
+    height: 95%;
 }
 
 aside .toggle .close {
@@ -642,9 +647,10 @@ main .users-details a {
     justify-content: center;
     text-align: center;
     margin-top: 16px;
-    background-color: var(--color-background2);
+    background-color: var(--color-info);
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
+    border: 5px solid var(--color-background2);
     box-shadow: var(--box-shadow);
     cursor: pointer;
     transition: all 0.3s ease;
@@ -657,6 +663,10 @@ main .users-details a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 15px;
+}
+.right-section .user-profile .logo p {
+    color: var(--color-background2);
 }
 
 .right-section .user-profile img {
@@ -718,7 +728,7 @@ main .users-details a {
 
 .right-section .reminders .notification .icon {
     padding: 9.6px;
-    color: var(--color-background2);
+    color: var(--color-text);
     background-color: var(--color-success);
     border-radius: 20%;
     display: flex;

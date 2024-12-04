@@ -1,0 +1,104 @@
+/* Variáveis de estilo associados ao elemento raiz do documento, no caso o <html>, mas com relevância de declaração maior. */
+:root {
+  --box-shadow: 0px 36px 54px var(--color-highlight);
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: #e8e8e8; /* Fundo cinza suave */
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: radial-gradient(circle, #082f57d3, #083057);    /* Gradiente Radial*/
+}
+
+.login-container .login-box {
+  background-color: #dadada;
+  width: 350px;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgb(0, 0, 0);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.login-container .login-box:hover {
+  box-shadow: none;
+}
+
+.logo img {
+  width: 200px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+.logo h1 {
+  font-size: 24px;
+  margin: 0;
+  color: #333;
+}
+
+.login-form {
+  margin-top: 20px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-group label {
+  font-size: 14px;
+  color: #000000;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #6e6e6e;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box; /* Inclui bordas e padding na largura total */
+}
+
+.input-group input:focus {
+  outline: none;
+  border: 1px solid #666;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.login-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+.login-footer {
+  margin-top: 10px;
+}
+
+.login-footer a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}  

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="06_login_styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="logo">
+                <img src="images/LOGO LINCE REBAIXADO.png" alt="Logo" />
+                <h1>Login</h1>
+            </div>
+            <!-- O formulário agora usa o método POST e envia os dados para o PHP -->
+            <form class="login-form" method="POST" action="06_login.php">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu email" required />
+                </div>
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="senha" placeholder="Digite sua senha" required />
+                </div>
+                <button type="submit" class="login-button">Entrar</button>
+            </form>
+            <div class="login-footer">
+                <a href="#">Esqueceu sua senha?</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
